@@ -1,0 +1,254 @@
+
+[
+  {
+    "image": "arizona green.JPG",
+    "name": "arizona green Leather",
+    "category": "Natural Leather",
+    "description": "Premium full grain leather with exceptional texture, durability and natural beauty.",
+    "features": ["High Durability", "Natural Texture", "Premium Quality"]
+  },
+  {
+    "image": "arizona havan.jpg",
+    "name": "arizona havan",
+    "category": "Luxury Leather",
+    "description": "Soft and elegant leather suitable for premium furniture and automotive applications.",
+    "features": ["Soft Touch", "Elegant Finish", "Flexible"]
+  },
+  {
+    "image": "arizona light HAVANA.jpg",
+    "name": "arizona light HAVANA",
+    "category": "Classic Collection",
+    "description": "A timeless leather collection combining durability and sophisticated appearance.",
+    "features": ["Long Lasting", "Classic Design", "Versatile"]
+  },
+{
+    "image": "arizona souris.jpg",
+    "name": "arizona souris",
+    "category": "Classic Collection",
+    "description": "A timeless leather collection combining durability and sophisticated appearance.",
+    "features": ["Long Lasting", "Classic Design", "Versatile"]
+  },
+
+  {
+    "image": "bacteria black.jpg",
+    "name": "bacteria blacks",
+    "category": "Classic Collection",
+    "description": "A timeless leather collection combining durability and sophisticated appearance.",
+    "features": ["Long Lasting", "Classic Design", "Versatile"]
+  },
+    {
+    "image": "bacteria brown.jpg",
+    "name": "bacteria brown",
+    "category": "Classic Collection",
+    "description": "A timeless leather collection combining durability and sophisticated appearance.",
+    "features": ["Long Lasting", "Classic Design", "Versatile"]
+  },
+
+  {
+    "image": "calacuta brown.jpg",
+    "name": "calacuta brown",
+    "category": "Classic Collection",
+    "description": "A timeless leather collection combining durability and sophisticated appearance.",
+    "features": ["Long Lasting", "Classic Design", "Versatile"]
+  },
+  {
+    "image": "ciervo brown.jpg",
+    "name": "ciervo brown",
+    "category": "Classic Collection",
+    "description": "A timeless leather collection combining durability and sophisticated appearance.",
+    "features": ["Long Lasting", "Classic Design", "Versatile"]
+  },
+  {
+    "image": "crocodile print black.jpg",
+    "name": "crocodile print black",
+    "category": "Classic Collection",
+    "description": "A timeless leather collection combining durability and sophisticated appearance.",
+    "features": ["Long Lasting", "Classic Design", "Versatile"]
+  },
+  {
+    "image": "crocodile silver.jpg",
+    "name": "crocodile silver",
+    "category": "Classic Collection",
+    "description": "A timeless leather collection combining durability and sophisticated appearance.",
+    "features": ["Long Lasting", "Classic Design", "Versatile"]
+  },
+  {
+    "image": "CROCODILE TIPPING RED.jpg",
+    "name": "CROCODILE TIPPING RED",
+    "category": "Classic Collection",
+    "description": "A timeless leather collection combining durability and sophisticated appearance.",
+    "features": ["Long Lasting", "Classic Design", "Versatile"]
+  },
+  {
+    "image": "crocodile-TIPPING BEIGE.jpg",
+    "name": "crocodile-TIPPING BEIGE",
+    "category": "Classic Collection",
+    "description": "A timeless leather collection combining durability and sophisticated appearance.",
+    "features": ["Long Lasting", "Classic Design", "Versatile"]
+  },
+  {
+    "image": "CRYSTAL BLUE.jpg",
+    "name": "CRYSTAL BLUE",
+    "category": "Classic Collection",
+    "description": "A timeless leather collection combining durability and sophisticated appearance.",
+    "features": ["Long Lasting", "Classic Design", "Versatile"]
+  },
+  {
+    "image": "CRYSTAL SILVER.jpg",
+    "name": "CRYSTAL SILVER",
+    "category": "Classic Collection",
+    "description": "A timeless leather collection combining durability and sophisticated appearance.",
+    "features": ["Long Lasting", "Classic Design", "Versatile"]
+  },
+  {
+     "image": "DALLAS MARRON.jpg",
+    "name": "DALLAS MARRON",
+    "category": "Classic Collection",
+    "description": "A timeless leather collection combining durability and sophisticated appearance.",
+    "features": ["Long Lasting", "Classic Design", "Versatile"]
+  },
+   {
+     "image": "DENVER LIMON.jpg",
+    "name": "DENVER LIMON",
+    "category": "Classic Collection",
+    "description": "A timeless leather collection combining durability and sophisticated appearance.",
+    "features": ["Long Lasting", "Classic Design", "Versatile"]
+  },
+  {
+    "image": "DENVER YELLOW.jpg",
+    "name": "DENVER YELLOW",
+    "category": "Classic Collection",
+    "description": "A timeless leather collection combining durability and sophisticated appearance.",
+    "features": ["Long Lasting", "Classic Design", "Versatile"]
+  },
+    {
+    "image": "DOLLAR PRINTSILVER.jpg",
+    "name": "DOLLAR PRINTSILVER",
+    "category": "Classic Collection",
+    "description": "A timeless leather collection combining durability and sophisticated appearance.",
+    "features": ["Long Lasting", "Classic Design", "Versatile"]
+  },
+    {
+    "image": "FLOATER BLACK.jpg",
+    "name": "FLOATER BLACK",
+    "category": "Classic Collection",
+    "description": "A timeless leather collection combining durability and sophisticated appearance.",
+    "features": ["Long Lasting", "Classic Design", "Versatile"]
+  },
+    {
+    "image": "FLORNTIQUE BLACK.jpg",
+    "name": "FLORNTIQUE BLACK",
+    "category": "Classic Collection",
+    "description": "A timeless leather collection combining durability and sophisticated appearance.",
+    "features": ["Long Lasting", "Classic Design", "Versatile"]
+  },
+  {
+   "image": "FLOWER BLACK.jpg",
+    "name": "FLOWER BLACK",
+    "category": "Classic Collection",
+    "description": "A timeless leather collection combining durability and sophisticated appearance.",
+    "features": ["Long Lasting", "Classic Design", "Versatile"]
+  },
+  {
+   "image": "FLOWER BROWN.jpg",
+    "name": "FLOWER BROWN",
+    "category": "Classic Collection",
+    "description": "A timeless leather collection combining durability and sophisticated appearance.",
+    "features": ["Long Lasting", "Classic Design", "Versatile"]
+  },
+  {
+   "image": "FLOWER HAVANA.jpg",
+    "name": "FLOWER HAVANA",
+    "category": "Classic Collection",
+    "description": "A timeless leather collection combining durability and sophisticated appearance.",
+    "features": ["Long Lasting", "Classic Design", "Versatile"]
+  },
+  {
+       "image": "HALLY PULL BROWN.jpg",
+    "name": "HALLY PULL BROWN",
+    "category": "Classic Collection",
+    "description": "A timeless leather collection combining durability and sophisticated appearance.",
+    "features": ["Long Lasting", "Classic Design", "Versatile"]
+  },
+   {
+    "image": "HILTON HIELO.jpg",
+    "name": "HILTON HIELO",
+    "category": "Classic Collection",
+    "description": "A timeless leather collection combining durability and sophisticated appearance.",
+    "features": ["Long Lasting", "Classic Design", "Versatile"]
+  },
+  {
+     "image": "MADEAS -palace (VIOLET).jpg",
+    "name": "MADEAS -palace (VIOLET)",
+    "category": "Classic Collection",
+    "description": "A timeless leather collection combining durability and sophisticated appearance.",
+    "features": ["Long Lasting", "Classic Design", "Versatile"]
+  },
+    {
+     "image": "MADEAS -palace (VIOLET).jpg",
+    "name": "MADEAS -palace (VIOLET)",
+    "category": "Classic Collection",
+    "description": "A timeless leather collection combining durability and sophisticated appearance.",
+    "features": ["Long Lasting", "Classic Design", "Versatile"]
+  },
+  {
+       "image": "MADRAS -palace (NAPITY).jpg",
+    "name": "MADRAS -palace (NAPITY)",
+    "category": "Classic Collection",
+    "description": "A timeless leather collection combining durability and sophisticated appearance.",
+    "features": ["Long Lasting", "Classic Design", "Versatile"]
+  },
+  {
+    "image": "MADRAS HAVANA.jpg",
+    "name": "MADRAS HAVANA",
+    "category": "Classic Collection",
+    "description": "A timeless leather collection combining durability and sophisticated appearance.",
+    "features": ["Long Lasting", "Classic Design", "Versatile"] 
+   },
+   {
+    "image": "MINIFIS SKY.jpg",
+    "name": "MINIFIS SKY",
+    "category": "Classic Collection",
+    "description": "A timeless leather collection combining durability and sophisticated appearance.",
+    "features": ["Long Lasting", "Classic Design", "Versatile"] 
+   },
+     {
+    "image": "NAPPA SHINE BROWN.jpg",
+    "name": "NAPPA SHINE BROWN",
+    "category": "Classic Collection",
+    "description": "A timeless leather collection combining durability and sophisticated appearance.",
+    "features": ["Long Lasting", "Classic Design", "Versatile"] 
+   },
+   {
+     "image": "NEW PAPER CRYSTAL PURPLE.jpg",
+    "name": "NEW PAPER CRYSTAL PURPLE",
+    "category": "Classic Collection",
+    "description": "A timeless leather collection combining durability and sophisticated appearance.",
+    "features": ["Long Lasting", "Classic Design", "Versatile"] 
+   },
+   {
+      
+     "image": "NUBCK BROWN.jpg",
+    "name": "NUBCK BROWN",
+    "category": "Classic Collection",
+    "description": "A timeless leather collection combining durability and sophisticated appearance.",
+    "features": ["Long Lasting", "Classic Design", "Versatile"] 
+   
+   },
+   {
+      "image": "NUBUCK BELT ECO GREEN.jpg",
+    "name": "NUBUCK BELT ECO GREEN",
+    "category": "Classic Collection",
+    "description": "A timeless leather collection combining durability and sophisticated appearance.",
+    "features": ["Long Lasting", "Classic Design", "Versatile"] 
+   },
+   {
+       "image": "NUBUCK BELT ECO GREEN.jpg",
+    "name": "NUBUCK BELT ECO GREEN",
+    "category": "Classic Collection",
+    "description": "A timeless leather collection combining durability and sophisticated appearance.",
+    "features": ["Long Lasting", "Classic Design", "Versatile"] 
+   }
+
+  
+]

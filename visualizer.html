@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PIEL COLOR | Color Visualizer</title>
+<!-- Bootstrap 5 RTL CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<!-- FontAwesome 6 -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet"/>
+<!-- AOS Animation Library CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"/>
+<link href="Images/logo-lrg.png" rel="icon"/>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root {
+      --leather-mahogany: #6B2D1B;
+      --leather-tan: #C88242;
+      --leather-light-tan: #EEDCC8;
+      --navy-dark: #0F1B29;
+      --bg-cream: #FDFBF7;
+      --bg-card: #FFFFFF;
+      --text-dark: #1E232A;
+      --text-muted: #5C6573;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Pulse & Glow Effects */
+    .pulse-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: #22c55e;
+      border-radius: 50%;
+      box-shadow: 0 0 0 rgba(34, 197, 94, 0.4);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+    }
+
+    /* Top Utility Bar */
+    .top-bar {
+      background-color: var(--navy-dark);
+      color: #E2E8F0;
+      font-size: 0.85rem;
+      border-bottom: 2px solid var(--leather-tan);
+    }
+    .top-bar a {
+      color: #E2E8F0;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .top-bar a:hover {
+      color: var(--leather-tan);
+    }
+
+    /* Main Navbar */
+    .navbar-piel {
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+    .brand-icon {
+      width: 55px;
+      height: 55px;
+      /*background: linear-gradient(135deg, var(--leather-mahogany), var(--leather-tan));*/
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.25rem;
+      box-shadow: 0 4px 10px rgba(107, 45, 27, 0.3);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    .brand-title {
+      font-weight: 800;
+      font-size: 1.35rem;
+      color: var(--navy-dark);
+      letter-spacing: -0.5px;
+    }
+    .brand-subtitle {
+      font-size: 0.7rem;
+      color: var(--leather-mahogany);
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .nav-link {
+      color: var(--navy-dark) !important;
+      font-weight: 600;
+      padding: 0.6rem 1rem !important;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+    .nav-link:hover, .nav-link.active-page {
+      color: var(--leather-mahogany) !important;
+      background-color: rgba(200, 130, 66, 0.12);
+      transform: translateY(-1px);
+    }
+
+    /* Page Navigation Logic & Smooth Fade Transition */
+    .page-section { display: block; }
+    .page-section.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Buttons */
+    .btn-leather-primary {
+      background: linear-gradient(135deg, var(--leather-mahogany), #502113);
+      color: #fff;
+      border: none;
+      font-weight: 700;
+      padding: 0.75rem 1.8rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(107, 45, 27, 0.25);
+      transition: all 0.3s ease;
+    }
+    .btn-leather-primary:hover {
+      background: linear-gradient(135deg, #502113, var(--leather-mahogany));
+      color: #fff;
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 25px rgba(107, 45, 27, 0.4);
+    }
+
+    .btn-leather-accent {
+      background: linear-gradient(135deg, var(--leather-tan), #a96328);
+      color: #fff;
+      border: none;
+      font-weight: 700;
+      padding: 0.75rem 1.8rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(200, 130, 66, 0.25);
+      transition: all 0.3s ease;
+    }
+    .btn-leather-accent:hover {
+      color: #fff;
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 25px rgba(200, 130, 66, 0.4);
+    }
+
+    /* Hero Section */
+    .hero-banner {
+      background: linear-gradient(135deg, rgba(15, 27, 41, 0.93), rgba(107, 45, 27, 0.88)),
+                  url('Images/Pio-Laser-10.jpeg') center/cover no-repeat;
+      color: #fff;
+      padding: 110px 0 90px;
+      border-radius: 0 0 30px 30px;
+      position: relative;
+    }
+    .hero-badge {
+      background-color: rgba(200, 130, 66, 0.25);
+      border: 1px solid var(--leather-tan);
+      color: #F8D8B6;
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 20px;
+      box-shadow: 0 0 15px rgba(200, 130, 66, 0.2);
+    }
+
+    /* Visualizer Tool */
+    .visualizer-card {
+      background: #FFFFFF;
+      border-radius: 20px;
+      border: 1px solid rgba(200, 130, 66, 0.2);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+      overflow: hidden;
+    }
+    .visualizer-preview-box {
+      height: 320px;
+      border-radius: 15px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.5s ease;
+      background-size: cover;
+      background-position: center;
+      box-shadow: inset 0 0 50px rgba(0,0,0,0.4);
+    }
+    .texture-overlay {
+      position: absolute;
+      inset: 0;
+      border-radius: 15px;
+      pointer-events: none;
+      mix-blend-mode: overlay;
+      opacity: 0.8;
+      transition: all 0.4s ease;
+    }
+
+    .swatch-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+      cursor: pointer;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .swatch-btn:hover, .swatch-btn.active {
+      transform: scale(1.25);
+      border-color: var(--leather-tan);
+      box-shadow: 0 0 15px rgba(200, 130, 66, 0.5);
+    }
+
+    /* Cards & Hover Animations */
+    .custom-card {
+      background: var(--bg-card);
+      border-radius: 16px;
+      border: 1px solid rgba(0,0,0,0.05);
+      padding: 30px;
+      transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+      height: 100%;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+    }
+    .custom-card:hover {
+      transform: translateY(-10px) scale(1.01);
+      box-shadow: 0 20px 40px rgba(107, 45, 27, 0.12);
+      border-color: rgba(200, 130, 66, 0.4);
+    }
+    .card-icon {
+      width: 65px;
+      height: 65px;
+      border-radius: 14px;
+      background: rgba(200, 130, 66, 0.12);
+      color: var(--leather-mahogany);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+    .custom-card:hover .card-icon {
+      transform: rotate(8deg) scale(1.1);
+    }
+
+    /* Factory Gallery Specific Styles */
+    .gallery-card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+      transition: all 0.4s ease;
+    }
+    .gallery-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(15, 27, 41, 0.9), rgba(15, 27, 41, 0.2));
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 20px;
+      color: #fff;
+    }
+    .gallery-card:hover img {
+      transform: scale(1.1);
+    }
+    .gallery-card:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    /* Product & Gallery Filter Badges */
+    .filter-btn {
+      background: #EFE8DF;
+      color: var(--navy-dark);
+      border: none;
+      padding: 8px 20px;
+      border-radius: 30px;
+      font-weight: 600;
+      margin: 4px;
+      transition: all 0.3s ease;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--leather-mahogany);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(107, 45, 27, 0.3);
+    }
+
+    /* Stats Banner */
+    .stats-section {
+      background: var(--navy-dark);
+      color: #fff;
+      border-radius: 24px;
+      padding: 50px 30px;
+      position: relative;
+      overflow: hidden;
+    }
+    .stats-number {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--leather-tan);
+    }
+
+    /* Factory Location Box */
+    .factory-card {
+      background: linear-gradient(145deg, #ffffff, #f7f3ee);
+      border-left: 6px solid var(--leather-mahogany);
+      border-radius: 16px;
+      padding: 35px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--navy-dark);
+      color: #A0AEC0;
+      padding-top: 70px;
+      padding-bottom: 30px;
+      border-top: 4px solid var(--leather-mahogany);
+    }
+    footer h5 {
+      color: #FFFFFF;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+    footer a {
+      color: #CBD5E0;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    footer a:hover {
+      color: var(--leather-tan);
+    }
+
+    /* Toast notification */
+    .toast-container {
+      position: fixed;
+      bottom: 25px;
+      left: 25px;
+      z-index: 9999;
+    }
+    /* ================= CERTIFICATIONS ================= */
+
+.certifications-section {
+    background: #f8f6f2;
+}
+
+.certificate-card {
+    height: 100%;
+    background: #fff;
+    border: 1px solid #eae5dd;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: all .3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .04);
+}
+
+.certificate-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .10);
+}
+
+.certificate-image {
+    position: relative;
+    height: 230px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    overflow: hidden;
+}
+
+.certificate-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform .4s ease;
+}
+
+.certificate-card:hover .certificate-image img {
+    transform: scale(1.04);
+}
+
+.certificate-zoom {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 52px;
+    height: 52px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(35, 27, 22, .88);
+    color: #fff;
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(.7);
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.certificate-card:hover .certificate-zoom {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.certificate-zoom:hover {
+    background: #c49a62;
+    color: #211b17;
+}
+
+.certificate-info {
+    padding: 16px 10px;
+    text-align: center;
+    border-top: 1px solid #f0ede8;
+}
+
+.certificate-info h6 {
+    color: #4b3022;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.certificate-info p {
+    color: #777;
+    font-size: 13px;
+    margin: 0;
+}
+
+/* ================= LIGHTBOX ================= */
+
+.certificate-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: rgba(15, 12, 10, .94);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease;
+    cursor: zoom-out;
+}
+
+.certificate-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.certificate-lightbox img {
+    max-width: 90%;
+    max-height: 88vh;
+    object-fit: contain;
+    border-radius: 5px;
+    box-shadow: 0 15px 60px rgba(0, 0, 0, .4);
+    transform: scale(.9);
+    transition: transform .3s ease;
+    cursor: default;
+}
+
+.certificate-lightbox.active img {
+    transform: scale(1);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 22px;
+    right: 28px;
+    width: 45px;
+    height: 45px;
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    background: rgba(255,255,255,.1);
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.lightbox-close:hover {
+    background: #c49a62;
+    color: #211b17;
+    transform: rotate(90deg);
+}
+
+@media (max-width: 576px) {
+    .certificate-image {
+        height: 170px;
+        padding: 10px;
+    }
+
+    .certificate-lightbox {
+        padding: 15px;
+    }
+
+    .certificate-lightbox img {
+        max-width: 100%;
+        max-height: 80vh;
+    }
+
+    .lightbox-close {
+        top: 12px;
+        right: 12px;
+    }
+
+    .certificate-zoom {
+        opacity: 1;
+        transform: scale(.85);
+        width: 40px;
+        height: 40px;
+        font-size: 15px;
+    }
+}
+  </style>
+</head>
+<body>
+<div class="toast-container">
+<div aria-atomic="true" aria-live="assertive" class="toast align-items-center text-bg-dark border-0 p-2" id="liveToast" role="alert">
+<div class="d-flex">
+<div class="toast-body text-white" id="toastMessage">
+          Options updated successfully.
+        </div>
+<button aria-label="Close" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" type="button"></button>
+</div>
+</div>
+</div>
+<div class="top-bar py-2 d-none d-xl-block">
+<div class="container d-flex justify-content-between align-items-center">
+<div class="d-flex gap-4">
+<span><i class="pulse-dot me-1"></i> Quesna factory operating at full capacity: Industrial Zone, Menoufia</span>
+<span><i class="fa-solid fa-envelope text-warning me-1"></i> egypt@pielcolor.com</span>
+<span><i class="fa-solid fa-phone text-warning me-1"></i> +20 (048) 2590-123</span>
+</div>
+<div class="d-flex gap-3 align-items-center">
+<span class="badge bg-danger">Egypt / Spain</span>
+<a href="#"><i class="fa-brands fa-linkedin"></i></a>
+<a href="#"><i class="fa-brands fa-facebook"></i></a>
+<a href="#"><i class="fa-solid fa-globe"></i> Global Website</a>
+</div>
+</div>
+</div>
+<div aria-hidden="true" class="modal fade" id="imageModal" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered modal-lg">
+<div class="modal-content bg-dark text-white">
+<div class="modal-header border-secondary">
+<h5 class="modal-title fw-bold" id="imageModalTitle">Image Details</h5>
+<button aria-label="Close" class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body p-0 text-center">
+<img alt="Enlarged view" class="img-fluid w-100 style-modal-img" id="imageModalSrc" src=""/>
+<div class="p-3 bg-secondary bg-opacity-25 text-start">
+<p class="mb-0 text-light opacity-90" id="imageModalDesc">Description goes here...</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div aria-hidden="true" class="modal fade" id="tdsModal" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-dark text-white">
+<h5 class="modal-header-title fw-bold" id="tdsTitle">Product Technical Data Sheet</h5>
+<button aria-label="Close" class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body p-4">
+<div class="mb-3">
+<span class="badge bg-danger" id="tdsCategory">Chemical Category</span>
+</div>
+<p class="text-muted" id="tdsDescription">Technical product details and applications...</p>
+<hr/>
+<h6>Standard Specifications:</h6>
+<ul class="small text-muted">
+<li>Organic content: Aligned with ZDHC requirements</li>
+<li>pH level: Balanced for leather processing</li>
+<li>Storage: Keep in a dry place away from direct sunlight</li>
+</ul>
+</div>
+<div class="modal-footer">
+<button class="btn btn-secondary" data-bs-dismiss="modal" type="button">Close</button>
+<button class="btn btn-leather-accent" onclick="showToast('Downloading TDS PDF...')" type="button">Download PDF Catalog</button>
+</div>
+</div>
+</div>
+</div>
+<div class="certificate-lightbox" id="certificateLightbox">
+<button aria-label="Close" class="lightbox-close" onclick="closeCertificate()" type="button">
+<i class="fa-solid fa-xmark"></i>
+</button>
+<img alt="Certificate" id="lightboxCertificateImage" src=""/>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    // Initialize AOS Animations
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        duration: 800,
+        once: true,
+        easing: 'ease-out-quad'
+      });
+      animateCounters();
+    });
+
+    // SPA Section Navigation System with Smooth Fade
+    function navigateTo(pageId) {
+      const sections = document.querySelectorAll('.page-section');
+      sections.forEach(sec => sec.classList.remove('active'));
+
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => link.classList.remove('active-page'));
+
+      const targetSection = document.getElementById('page-' + pageId);
+      if (targetSection) {
+        targetSection.classList.add('active');
+        // Refresh AOS animations for newly displayed page
+        setTimeout(() => { AOS.refresh(); }, 100);
+      }
+
+      const targetNav = document.getElementById('nav-' + pageId);
+      if (targetNav) {
+        targetNav.classList.add('active-page');
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      const navbarCollapse = document.getElementById('pielNavbar');
+      if (navbarCollapse.classList.contains('show')) {
+        const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+        bsCollapse.hide();
+      }
+    }
+
+    // Quick Preview Swatch Update
+    function updateQuickPreview(colorHex, label) {
+      const previewBox = document.getElementById('quickPreviewBox');
+      const labelBox = document.getElementById('quickPreviewLabel');
+      previewBox.style.backgroundColor = colorHex;
+      labelBox.innerText = label;
+    }
+
+    // Filter Products Catalog
+    function filterProducts(category, btnElement) {
+      const buttons = document.querySelectorAll('#page-products .filter-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+      btnElement.classList.add('active');
+
+      const items = document.querySelectorAll('.product-item');
+      items.forEach(item => {
+        if (category === 'all' || item.classList.contains(category)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // Filter Factory Gallery Items
+    function filterGallery(category, btnElement) {
+      const buttons = document.querySelectorAll('#page-gallery .filter-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+      btnElement.classList.add('active');
+
+      const items = document.querySelectorAll('.gallery-item');
+      items.forEach(item => {
+        if (category === 'all' || item.classList.contains(category)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // Open Factory Image Modal (Lightbox)
+    function openImageModal(imgUrl, title, desc) {
+      document.getElementById('imageModalTitle').innerText = title;
+      document.getElementById('imageModalSrc').src = imgUrl;
+      document.getElementById('imageModalDesc').innerText = desc;
+      
+      const modal = new bootstrap.Modal(document.getElementById('imageModal'));
+      modal.show();
+    }
+
+    // Open TDS Modal
+    function openTdsModal(title, category, description) {
+      document.getElementById('tdsTitle').innerText = 'Product Technical Data Sheet (TDS): ' + title;
+      document.getElementById('tdsCategory').innerText = category;
+      document.getElementById('tdsDescription').innerText = description;
+      
+      const modal = new bootstrap.Modal(document.getElementById('tdsModal'));
+      modal.show();
+    }
+
+    
+
+    function selectColor(element) {
+      document.querySelectorAll('#colorSwatches .swatch-btn').forEach(btn => btn.classList.remove('active'));
+      element.classList.add('active');
+      
+      currentSelectedColorHex = element.getAttribute('data-color');
+      currentSelectedColorName = element.getAttribute('data-color-name');
+      document.getElementById('selectedColorName').innerText = currentSelectedColorName;
+
+      updateVisualizer();
+    }
+
+    function updateVisualizer() {
+      const appSelect = document.getElementById('appSelect');
+      const appText = appSelect.options[appSelect.selectedIndex].text;
+      
+      const finishType = document.querySelector('input[name="finishType"]:checked').value;
+      
+      const mainBox = document.getElementById('mainVisualizerBox');
+      const overlay = document.getElementById('visualizerOverlay');
+      const tag = document.getElementById('previewTag');
+      const titleDisplay = document.getElementById('visualizerTitleDisplay');
+      const descDisplay = document.getElementById('visualizerDescDisplay');
+      const recipeList = document.getElementById('recommendedRecipe');
+
+      mainBox.style.backgroundColor = currentSelectedColorHex;
+
+      if (finishType === 'matte') {
+        overlay.style.background = 'linear-gradient(135deg, rgba(0,0,0,0.2), rgba(0,0,0,0.5))';
+        tag.innerText = appText + ' - Matte';
+        descDisplay.innerText = 'Treated with AQUADERM MATT to create a smooth, velvety leather surface with fingerprint resistance.';
+        recipeList.innerHTML = `
+          <li>Dye: PIELCOLOR DYE HIGH-PENETRATION</li>
+          <li>Topcoat: AQUADERM MATT COAT 50</li>
+          <li>Note: Excellent abrasion protection.</li>
+        `;
+      } else if (finishType === 'satin') {
+        overlay.style.background = 'linear-gradient(135deg, rgba(255,255,255,0.15), rgba(0,0,0,0.3))';
+        tag.innerText = appText + ' - Natural Satin';
+        descDisplay.innerText = 'Treated with SATIN-FINISH B-20 to provide a refined natural feel with a soft light reflection.';
+        recipeList.innerHTML = `
+          <li>Dye: PIELCOLOR ANILINE DYE</li>
+          <li>Topcoat: SATIN-FINISH B-20</li>
+          <li>Note: A natural, organic appearance for premium leather.</li>
+        `;
+      } else if (finishType === 'gloss') {
+        overlay.style.background = 'linear-gradient(135deg, rgba(255,255,255,0.45), rgba(0,0,0,0.1))';
+        tag.innerText = appText + ' - High Gloss';
+        descDisplay.innerText = 'Treated with HIGH-GLOSS POLYURETHANE to deliver a crystal-like shine for footwear and handbags.';
+        recipeList.innerHTML = `
+          <li>Dye: PIELCOLOR HIGH-COVER PIGMENT</li>
+          <li>Topcoat: PIEL-GLOSS FINISH HIGH</li>
+          <li>Note: Exceptional gloss without cracking.</li>
+        `;
+      }
+
+      titleDisplay.innerText = 'Leather ' + appText.split(' ')[0] + ' - ' + currentSelectedColorName;
+    }
+
+    // Counter Animation Logic for Stats Banner
+    function animateCounters() {
+      const counters = document.querySelectorAll('.stats-number[data-target]');
+      counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        let count = 0;
+        const speed = target / 50;
+        const updateCount = () => {
+          count += speed;
+          if (count < target) {
+            counter.innerText = '+' + Math.ceil(count);
+            setTimeout(updateCount, 30);
+          } else {
+            counter.innerText = '+' + target;
+          }
+        };
+        updateCount();
+      });
+    }
+
+    // Form Submission Handler
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      showToast('Thank you for contacting us! Your request has been successfully sent to the Quesna factory technical support team. We will contact you soon.');
+      document.getElementById('contactForm').reset();
+    }
+
+    // Show Toast Notification
+    function showToast(message) {
+      document.getElementById('toastMessage').innerText = message;
+      const toastEl = document.getElementById('liveToast');
+      const toast = new bootstrap.Toast(toastEl);
+      toast.show();
+    }
+
+    function openCertificate(button) {
+    const image = button.closest('.certificate-image').querySelector('img');
+
+    const lightbox = document.getElementById('certificateLightbox');
+    const lightboxImage = document.getElementById('lightboxCertificateImage');
+
+    lightboxImage.src = image.src;
+    lightboxImage.alt = image.alt;
+
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeCertificate() {
+    const lightbox = document.getElementById('certificateLightbox');
+
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Close when clicking outside the image
+document.getElementById('certificateLightbox').addEventListener('click', function (e) {
+    if (e.target === this) {
+        closeCertificate();
+    }
+});
+
+// Close using ESC key
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+        closeCertificate();
+    }
+});
+  </script>
+<nav class="navbar navbar-expand-xl navbar-piel sticky-top py-3">
+<div class="container-fluid">
+<a class="navbar-brand d-flex align-items-center gap-4" href="index.html">
+<div class="brand-icon">
+<img src="Images/logo-lrg.png" style="width: 55px; height: auto;"/>
+</div>
+<div class="brand-text">
+<div class="brand-title">PIEL COLOR</div>
+<div class="brand-subtitle">CHEMICALS &amp; LEATHER FINISHING</div>
+</div>
+</a>
+<button class="navbar-toggler border-0" data-bs-target="#pielNavbar" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="pielNavbar">
+<ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-1">
+<li class="nav-item">
+<a class="nav-link active-page" href="index.html" id="nav-home"  >Home</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="about.html" id="nav-about" >About Us</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="Our-products.html" id="nav-products" >Products</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="gallery.html" id="nav-gallery" >Factory</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="sustainability.html" id="nav-sustainability" >Sustainability</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="support.html" id="nav-support" >Technical Support</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="contact.html" id="nav-contact" >Contact</a>
+</li>
+</ul>
+<div>
+<a class="btn btn-leather-primary text-nowrap" href="contact.html" >
+<i class="fa-solid fa-paper-plane me-1"></i> Request Samples
+</a>
+</div>
+</div>
+</div>
+</nav>
+<div class="page-section" id="page-visualizer">
+<section class="py-5 bg-white border-bottom">
+<div class="container py-4">
+<div class="text-center max-w-700 mx-auto mb-5" data-aos="fade-up">
+<span class="badge bg-danger px-3 py-2 rounded-pill fw-bold mb-2">Exclusive Interactive Tool</span>
+<h2 class="display-6 fw-bold">Interactive Leather Color &amp; Effects Lab</h2>
+<p class="text-muted">Choose the application, color shade, and finishing topcoat to preview the estimated appearance of leather treated with Piel Color products.</p>
+</div>
+<div class="row g-5 align-items-center">
+<div class="col-lg-5" data-aos="fade-left">
+<div class="bg-light p-4 rounded-4 border shadow-sm">
+<div class="mb-4">
+<label class="fw-bold mb-2 text-dark"><i class="fa-solid fa-1 text-danger me-1"></i> Select Leather Application:</label>
+<select class="form-select form-select-lg" id="appSelect" onchange="updateVisualizer()">
+<option value="shoes">Luxury Footwear</option>
+<option value="auto">Automotive Leather</option>
+<option value="furniture">Furniture &amp; Upholstery</option>
+<option value="jackets">Leather Garments</option>
+</select>
+</div>
+<div class="mb-4">
+<label class="fw-bold mb-2 text-dark"><i class="fa-solid fa-2 text-danger me-1"></i> Select Dye / Color:</label>
+<div class="d-flex flex-wrap gap-2 pt-1" id="colorSwatches">
+<div class="swatch-btn" data-color="#4A2311" data-color-name="Dark Chocolate Brown" onclick="selectColor(this)" style="background: #4A2311;"></div>
+<div class="swatch-btn" data-color="#B86B2D" data-color-name="Luxury Camel Tan" onclick="selectColor(this)" style="background: #B86B2D;"></div>
+<div class="swatch-btn" data-color="#111827" data-color-name="Premium Carbon Black" onclick="selectColor(this)" style="background: #111827;"></div>
+<div class="swatch-btn" data-color="#801818" data-color-name="Classic Burgundy" onclick="selectColor(this)" style="background: #801818;"></div>
+<div class="swatch-btn" data-color="#2D4A3E" data-color-name="Luxury Olive Green" onclick="selectColor(this)" style="background: #2D4A3E;"></div>
+</div>
+<div class="small text-muted mt-2">Selected Color: <span class="fw-bold text-dark" id="selectedColorName">Dark Chocolate Brown</span></div>
+</div>
+<div class="mb-4">
+<label class="fw-bold mb-2 text-dark"><i class="fa-solid fa-3 text-danger me-1"></i> Select Final Finish Coating:</label>
+<div class="btn-group w-full flex-wrap gap-2" role="group">
+<input checked="" class="btn-check" id="finishMatte" name="finishType" onchange="updateVisualizer()" type="radio" value="matte"/>
+<label class="btn btn-outline-dark rounded-3 px-3" for="finishMatte">Matte</label>
+<input class="btn-check" id="finishSatin" name="finishType" onchange="updateVisualizer()" type="radio" value="satin"/>
+<label class="btn btn-outline-dark rounded-3 px-3" for="finishSatin">Natural Satin</label>
+<input class="btn-check" id="finishGloss" name="finishType" onchange="updateVisualizer()" type="radio" value="gloss"/>
+<label class="btn btn-outline-dark rounded-3 px-3" for="finishGloss">High Gloss</label>
+</div>
+</div>
+<div class="p-3 bg-white border rounded-3">
+<h6 class="fw-bold text-primary mb-2"><i class="fa-solid fa-box-open me-1"></i> Recommended Formulation for This Effect:</h6>
+<ul class="small text-muted mb-0 ps-3" id="recommendedRecipe">
+<li>Dye: PIELCOLOR DYE BROWN 2R</li>
+<li>Protective Topcoat: AQUADERM MATT COAT 50</li>
+<li>Fatliquor: PIELOIL SOFT-FOAM</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-lg-7 text-center" data-aos="fade-right">
+<div class="p-4 bg-dark text-white rounded-4 shadow-lg">
+<div class="d-flex justify-content-between align-items-center mb-3">
+<span class="badge bg-warning text-dark"><i class="fa-solid fa-eye me-1"></i> Live Preview</span>
+<span class="small text-light" id="previewTag">Footwear - Matte</span>
+</div>
+<div class="visualizer-preview-box" id="mainVisualizerBox" style="height: 380px; background-color: #4A2311;">
+<div class="texture-overlay" id="visualizerOverlay" style="background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(0,0,0,0.4));"></div>
+<div class="position-relative text-center p-4 bg-dark bg-opacity-60 rounded-3 border border-secondary text-white max-w-400">
+<i class="fa-solid fa-shield-cat display-4 mb-2" style="color: var(--leather-tan);"></i>
+<h5 class="fw-bold" id="visualizerTitleDisplay">Dark Brown Footwear Leather</h5>
+<p class="small mb-0 text-light opacity-85" id="visualizerDescDisplay">Treated with the AQUADERM water-based topcoat for a matte, scratch-resistant finish.</p>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top border-secondary">
+<small class="text-muted">Note: Actual color shades may vary depending on the raw leather type and spray application method.</small>
+<button class="btn btn-sm btn-leather-accent" onclick="showToast('Formulation saved! You can request it through the Contact page.')">Save Formulation</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="row g-4 mb-5">
+<div class="col-lg-4">
+<div class="d-flex align-items-center gap-2 mb-3">
+<div class="brand-icon">
+<img src="Images/logo-lrg.png" style="width: 55px; height: auto;"/>
+</div>
+<span class="fs-4 fw-bold text-white">PIEL COLOR</span>
+</div>
+<p class="small leading-relaxed mb-3">
+            A global innovator and manufacturer of chemicals, dyes, and leather finishing systems. Decades of quality, supported by our branch and factory in Quesna, Egypt.
+          </p>
+<div class="d-flex gap-3 fs-5">
+<a href="#"><i class="fa-brands fa-facebook"></i></a>
+<a href="#"><i class="fa-brands fa-linkedin"></i></a>
+<a href="#"><i class="fa-brands fa-instagram"></i></a>
+</div>
+</div>
+<div class="col-lg-2 col-6">
+<h5>Quick Links</h5>
+<ul class="list-unstyled d-flex flex-column gap-2 small">
+<li><a href="#" onclick="navigateTo('home')">Home</a></li>
+<li><a href="#" onclick="navigateTo('about')">About Us</a></li>
+<li><a href="#" onclick="navigateTo('products')">Products &amp; Solutions</a></li>
+<li><a href="#" onclick="navigateTo('gallery')">Factory Gallery</a></li>
+</ul>
+</div>
+<div class="col-lg-3 col-6">
+<h5>Expertise &amp; Solutions</h5>
+<ul class="list-unstyled d-flex flex-column gap-2 small">
+<li><a href="#" onclick="navigateTo('products')">Wet End Retanning Agents</a></li>
+<li><a href="#" onclick="navigateTo('products')">Aniline Dyes &amp; Pigments</a></li>
+<li><a href="#" onclick="navigateTo('products')">Matte &amp; Gloss Topcoats</a></li>
+<li><a href="#" onclick="navigateTo('sustainability')">Sustainable Green Tanning</a></li>
+</ul>
+</div>
+<div class="col-lg-3">
+<h5>Quesna Factory</h5>
+<p class="small text-light opacity-75">
+            Industrial Zone, Kafr El-Raml, Quesna, Menoufia, Egypt.<br/>
+             Phone: +20 48 2590509<br/>
+            Email: Info@pielcolorsae.com
+          </p>
+</div>
+</div>
+<hr class="border-secondary"/>
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-center small pt-3">
+<div>All Rights Reserved © 2026 PIEL COLOR SAE - Professional Design &amp; Development.</div>
+<div class="d-flex gap-3 mt-2 mt-md-0">
+<a href="#">Privacy Policy</a>
+<a href="#">Terms &amp; Conditions</a>
+</div>
+</div>
+</div>
+</footer>
+<div class="certificate-lightbox" id="certificateLightbox">
+<button aria-label="Close" class="lightbox-close" onclick="closeCertificate()" type="button">
+<i class="fa-solid fa-xmark"></i>
+</button>
+<img alt="Certificate" id="lightboxCertificateImage" src=""/>
+</div><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script><script>
+    // Initialize AOS Animations
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        duration: 800,
+        once: true,
+        easing: 'ease-out-quad'
+      });
+      animateCounters();
+    });
+
+    // Multi-page navigation: each section now has its own HTML document.
+    function navigateTo(pageId) {
+      const routes = {'home': 'index.html', 'about': 'about.html', 'products': 'products.html', 'visualizer': 'visualizer.html', 'gallery': 'gallery.html', 'sustainability': 'sustainability.html', 'support': 'support.html', 'contact': 'contact.html'};
+      if (routes[pageId]) window.location.href = routes[pageId];
+    }
+
+    // Quick Preview Swatch Update
+    function updateQuickPreview(colorHex, label) {
+      const previewBox = document.getElementById('quickPreviewBox');
+      const labelBox = document.getElementById('quickPreviewLabel');
+      previewBox.style.backgroundColor = colorHex;
+      labelBox.innerText = label;
+    }
+
+    // Filter Products Catalog
+    function filterProducts(category, btnElement) {
+      const buttons = document.querySelectorAll('#page-products .filter-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+      btnElement.classList.add('active');
+
+      const items = document.querySelectorAll('.product-item');
+      items.forEach(item => {
+        if (category === 'all' || item.classList.contains(category)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // Filter Factory Gallery Items
+    function filterGallery(category, btnElement) {
+      const buttons = document.querySelectorAll('#page-gallery .filter-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+      btnElement.classList.add('active');
+
+      const items = document.querySelectorAll('.gallery-item');
+      items.forEach(item => {
+        if (category === 'all' || item.classList.contains(category)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // Open Factory Image Modal (Lightbox)
+    function openImageModal(imgUrl, title, desc) {
+      document.getElementById('imageModalTitle').innerText = title;
+      document.getElementById('imageModalSrc').src = imgUrl;
+      document.getElementById('imageModalDesc').innerText = desc;
+      
+      const modal = new bootstrap.Modal(document.getElementById('imageModal'));
+      modal.show();
+    }
+
+    // Open TDS Modal
+    function openTdsModal(title, category, description) {
+      document.getElementById('tdsTitle').innerText = 'Product Technical Data Sheet (TDS): ' + title;
+      document.getElementById('tdsCategory').innerText = category;
+      document.getElementById('tdsDescription').innerText = description;
+      
+      const modal = new bootstrap.Modal(document.getElementById('tdsModal'));
+      modal.show();
+    }
+
+    // Leather Visualizer Lab Logic
+    let currentSelectedColorHex = '#4A2311';
+    let currentSelectedColorName = 'Dark Chocolate Brown';
+
+    function selectColor(element) {
+      document.querySelectorAll('#colorSwatches .swatch-btn').forEach(btn => btn.classList.remove('active'));
+      element.classList.add('active');
+      
+      currentSelectedColorHex = element.getAttribute('data-color');
+      currentSelectedColorName = element.getAttribute('data-color-name');
+      document.getElementById('selectedColorName').innerText = currentSelectedColorName;
+
+      updateVisualizer();
+    }
+
+    function updateVisualizer() {
+      const appSelect = document.getElementById('appSelect');
+      const appText = appSelect.options[appSelect.selectedIndex].text;
+      
+      const finishType = document.querySelector('input[name="finishType"]:checked').value;
+      
+      const mainBox = document.getElementById('mainVisualizerBox');
+      const overlay = document.getElementById('visualizerOverlay');
+      const tag = document.getElementById('previewTag');
+      const titleDisplay = document.getElementById('visualizerTitleDisplay');
+      const descDisplay = document.getElementById('visualizerDescDisplay');
+      const recipeList = document.getElementById('recommendedRecipe');
+
+      mainBox.style.backgroundColor = currentSelectedColorHex;
+
+      if (finishType === 'matte') {
+        overlay.style.background = 'linear-gradient(135deg, rgba(0,0,0,0.2), rgba(0,0,0,0.5))';
+        tag.innerText = appText + ' - Matte';
+        descDisplay.innerText = 'Treated with AQUADERM MATT to create a smooth, velvety leather surface with fingerprint resistance.';
+        recipeList.innerHTML = `
+          <li>Dye: PIELCOLOR DYE HIGH-PENETRATION</li>
+          <li>Topcoat: AQUADERM MATT COAT 50</li>
+          <li>Note: Excellent abrasion protection.</li>
+        `;
+      } else if (finishType === 'satin') {
+        overlay.style.background = 'linear-gradient(135deg, rgba(255,255,255,0.15), rgba(0,0,0,0.3))';
+        tag.innerText = appText + ' - Natural Satin';
+        descDisplay.innerText = 'Treated with SATIN-FINISH B-20 to provide a refined natural feel with a soft light reflection.';
+        recipeList.innerHTML = `
+          <li>Dye: PIELCOLOR ANILINE DYE</li>
+          <li>Topcoat: SATIN-FINISH B-20</li>
+          <li>Note: A natural, organic appearance for premium leather.</li>
+        `;
+      } else if (finishType === 'gloss') {
+        overlay.style.background = 'linear-gradient(135deg, rgba(255,255,255,0.45), rgba(0,0,0,0.1))';
+        tag.innerText = appText + ' - High Gloss';
+        descDisplay.innerText = 'Treated with HIGH-GLOSS POLYURETHANE to deliver a crystal-like shine for footwear and handbags.';
+        recipeList.innerHTML = `
+          <li>Dye: PIELCOLOR HIGH-COVER PIGMENT</li>
+          <li>Topcoat: PIEL-GLOSS FINISH HIGH</li>
+          <li>Note: Exceptional gloss without cracking.</li>
+        `;
+      }
+
+      titleDisplay.innerText = 'Leather ' + appText.split(' ')[0] + ' - ' + currentSelectedColorName;
+    }
+
+    // Counter Animation Logic for Stats Banner
+    function animateCounters() {
+      const counters = document.querySelectorAll('.stats-number[data-target]');
+      counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        let count = 0;
+        const speed = target / 50;
+        const updateCount = () => {
+          count += speed;
+          if (count < target) {
+            counter.innerText = '+' + Math.ceil(count);
+            setTimeout(updateCount, 30);
+          } else {
+            counter.innerText = '+' + target;
+          }
+        };
+        updateCount();
+      });
+    }
+
+    // Form Submission Handler
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      showToast('Thank you for contacting us! Your request has been successfully sent to the Quesna factory technical support team. We will contact you soon.');
+      document.getElementById('contactForm').reset();
+    }
+
+    // Show Toast Notification
+    function showToast(message) {
+      const messageEl = document.getElementById('toastMessage');
+      if (!messageEl) return;
+      messageEl.innerText = message;
+      const toastEl = document.getElementById('liveToast');
+      const toast = new bootstrap.Toast(toastEl);
+      toast.show();
+    }
+
+    function openCertificate(button) {
+    const image = button.closest('.certificate-image').querySelector('img');
+
+    const lightbox = document.getElementById('certificateLightbox');
+    const lightboxImage = document.getElementById('lightboxCertificateImage');
+
+    lightboxImage.src = image.src;
+    lightboxImage.alt = image.alt;
+
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeCertificate() {
+    const lightbox = document.getElementById('certificateLightbox');
+
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Close when clicking outside the image
+document.getElementById('certificateLightbox')?.addEventListener('click', function (e) {
+    if (e.target === this) {
+        closeCertificate();
+    }
+});
+
+// Close using ESC key
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+        closeCertificate();
+    }
+});
+  </script>
+</body>
+</html>
