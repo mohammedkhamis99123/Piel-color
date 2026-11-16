@@ -9,7 +9,7 @@ const pagination = document.getElementById("pagination");
 
 async function loadProducts() {
     try {
-        const response = await fetch("assets/data/products.json");
+        const response = await fetch("assets/data/Products.json");
 
         if (!response.ok) {
             throw new Error("Unable to load products");
