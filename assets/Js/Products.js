@@ -50,7 +50,7 @@ function renderProducts() {
             <div class="product-image">
 
                 <img
-                    src="images/products/${encodeURIComponent(product.image)}"
+                    src="Images/Products/${encodeURIComponent(product.image)}"
                     alt="${escapeHTML(product.name)}"
                     loading="lazy"
                     onerror="this.style.opacity='0';"
@@ -148,7 +148,7 @@ function openProduct(index) {
     if (!product) return;
 
     document.getElementById("modalImage").src =
-        `images/products/${encodeURIComponent(product.image)}`;
+        `Images/Products/${encodeURIComponent(product.image)}`;
 
     document.getElementById("modalImage").alt = product.name;
 
