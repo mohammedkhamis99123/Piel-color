@@ -158,7 +158,31 @@
             </button>
 
             <div class="modal-image">
-                <img id="modalImage" src="" alt="">
+                
+<div class="modal-image-wrapper" id="modalImageWrapper">
+
+    <span class="zoom-hint">
+        Click image or use controls to zoom
+    </span>
+
+    <img id="modalImage" src="" alt="Product Image">
+
+    <div class="zoom-controls">
+        <button type="button" onclick="zoomIn()" title="Zoom In">
+            <i class="fa-solid fa-plus"></i>
+        </button>
+
+        <button type="button" onclick="zoomOut()" title="Zoom Out">
+            <i class="fa-solid fa-minus"></i>
+        </button>
+
+     <button type="button" onclick="toggleImageFullscreen(event)" title="Full Screen">
+    <i class="fa-solid fa-expand"></i>
+</button>
+    </div>
+
+</div>
+
             </div>
 
             <div class="modal-content">

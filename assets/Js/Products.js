@@ -175,6 +175,13 @@ function openProduct(index) {
         .classList.add("active");
 
     document.body.style.overflow = "hidden";
+
+    document.getElementById("modalImage").src =
+    `Images/Products/${encodeURIComponent(product.image)}`;
+
+document.getElementById("modalImage").alt = product.name;
+
+resetProductZoom();
 }
 
 function closeProduct() {
@@ -182,6 +189,8 @@ function closeProduct() {
         .classList.remove("active");
 
     document.body.style.overflow = "";
+
+    resetProductZoom();
 }
 
 function escapeHTML(value) {
@@ -211,3 +220,121 @@ document.addEventListener("keydown", function (event) {
 });
 
 loadProducts();
+
+
+
+let zoomScale = 1;
+let imageX = 0;
+let imageY = 0;
+
+let isDragging = false;
+let startX = 0;
+let startY = 0;
+
+const modalImage = document.getElementById("modalImage");
+const imageWrapper = document.getElementById("modalImageWrapper");
+
+function updateZoom() {
+    modalImage.style.transform =
+        `translate(${imageX}px, ${imageY}px) scale(${zoomScale})`;
+
+    modalImage.classList.toggle("zoomed", zoomScale > 1);
+}
+
+function zoomIn() {
+    zoomScale = Math.min(zoomScale + 0.5, 4);
+    updateZoom();
+}
+
+function zoomOut() {
+    zoomScale = Math.max(zoomScale - 0.5, 1);
+
+    if (zoomScale === 1) {
+        imageX = 0;
+        imageY = 0;
+    }
+
+    updateZoom();
+}
+
+function resetZoom() {
+    zoomScale = 1;
+    imageX = 0;
+    imageY = 0;
+    updateZoom();
+}
+
+// Click image to toggle zoom
+modalImage.addEventListener("click", function () {
+    if (zoomScale === 1) {
+        zoomScale = 2;
+    } else {
+        resetZoom();
+    }
+
+    updateZoom();
+});
+
+// Mouse wheel zoom
+imageWrapper.addEventListener("wheel", function (event) {
+    event.preventDefault();
+
+    if (event.deltaY < 0) {
+        zoomIn();
+    } else {
+        zoomOut();
+    }
+}, { passive: false });
+
+// Drag image with mouse
+modalImage.addEventListener("mousedown", function (event) {
+    if (zoomScale <= 1) return;
+
+    isDragging = true;
+
+    startX = event.clientX - imageX;
+    startY = event.clientY - imageY;
+
+    modalImage.classList.add("dragging");
+});
+
+document.addEventListener("mousemove", function (event) {
+    if (!isDragging) return;
+
+    imageX = event.clientX - startX;
+    imageY = event.clientY - startY;
+
+    updateZoom();
+});
+
+document.addEventListener("mouseup", function () {
+    isDragging = false;
+    modalImage.classList.remove("dragging");
+});
+
+// Reset zoom when modal opens
+function resetProductZoom() {
+    resetZoom();
+}
+
+
+async function toggleImageFullscreen(event) {
+    event?.stopPropagation();
+
+    const wrapper = document.getElementById("modalImageWrapper");
+
+    try {
+        if (!document.fullscreenElement) {
+            await wrapper.requestFullscreen();
+        } else {
+            await document.exitFullscreen();
+        }
+    } catch (error) {
+        console.error("Fullscreen error:", error);
+    }
+}
+
+// Reset image zoom when entering or leaving fullscreen
+document.addEventListener("fullscreenchange", function () {
+    resetZoom();
+});
