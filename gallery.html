@@ -15,7 +15,14 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/Css/fonts.css"> 
 <style>
+      @font-face {
+    font-family: 'MyCustomFont';
+    src: url('assets/fonts/Fraunces-Italic-VariableFont_SOFT,WONK,opsz,wght.ttf') format('truetype'); /* لو الخط بصيغة woff2 غيرها لـ format('woff2') */
+    font-weight: normal;
+    font-style: normal;
+}
     :root {
       --leather-mahogany: #6B2D1B;
       --leather-tan: #C88242;
@@ -28,14 +35,15 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif;
+            font-family: 'MyCustomFont', sans-serif;
+
       background-color: var(--bg-cream);
       color: var(--text-dark);
       overflow-x: hidden;
     }
 
     h1, h2, h3, h4, h5, h6 {
-      font-family: 'Inter', sans-serif;
+      font-family: 'MyCustomFont', sans-serif;
     }
 
     /* Pulse & Glow Effects */
@@ -919,8 +927,8 @@ document.addEventListener('keydown', function (e) {
 <div class="row g-4" id="factoryGalleryGrid">
 <!-- Image Item 1 -->
 <div class="col-md-4 gallery-item lines" data-aos="fade-up">
-<div class="gallery-card" onclick="openImageModal('https://tse1.mm.bing.net/th/id/OIP.UH_RivbU5EIAz6QtyV6zhQHaDt?r=0&amp;rs=1&amp;pid=ImgDetMain&amp;o=7&amp;rm=3', 'Automated Chemical Blending Lines', 'Advanced mixing reactors with automated controls to ensure consistent batches in line with Spanish specifications.')">
-<img alt="Mixing Lines" src="https://tse1.mm.bing.net/th/id/OIP.UH_RivbU5EIAz6QtyV6zhQHaDt?r=0&amp;rs=1&amp;pid=ImgDetMain&amp;o=7&amp;rm=3"/>
+<div class="gallery-card" onclick="openImageModal('Images/Factory/AHM_9624.jpg', 'Automated Chemical Blending Lines', 'Advanced mixing reactors with automated controls to ensure consistent batches in line with Spanish specifications.')">
+<img alt="Mixing Lines" src="Images/Factory/AHM_9624.jpg"/>
 <div class="gallery-overlay">
 <span class="badge bg-warning text-dark w-auto mb-2 align-self-start">Blending &amp; Filling Lines</span>
 <h5 class="fw-bold mb-1">Blending &amp; Formulation Reactors</h5>
@@ -930,8 +938,8 @@ document.addEventListener('keydown', function (e) {
 </div>
 <!-- Image Item 2 -->
 <div class="col-md-4 gallery-item labs" data-aos="fade-up" data-aos-delay="100">
-<div class="gallery-card" onclick="openImageModal('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&amp;fit=crop&amp;w=1000&amp;q=80', 'Leather Testing &amp; Color-Matching Laboratory', 'Spectrophotometers used to measure dye fastness and verify color shades.')">
-<img alt="Quality Lab" src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&amp;fit=crop&amp;w=600&amp;q=80"/>
+<div class="gallery-card" onclick="openImageModal('Images/Factory/AHM_9638.jpg', 'Leather Testing &amp; Color-Matching Laboratory', 'Spectrophotometers used to measure dye fastness and verify color shades.')">
+<img alt="Quality Lab" src="Images/Factory/AHM_9638.jpg"/>
 <div class="gallery-overlay">
 <span class="badge bg-danger w-auto mb-2 align-self-start">Technical Support Labs</span>
 <h5 class="fw-bold mb-1">Quality &amp; Analysis Laboratory</h5>
@@ -941,8 +949,8 @@ document.addEventListener('keydown', function (e) {
 </div>
 <!-- Image Item 3 -->
 <div class="col-md-4 gallery-item storage" data-aos="fade-up" data-aos-delay="200">
-<div class="gallery-card" onclick="openImageModal('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&amp;fit=crop&amp;w=1000&amp;q=80', 'Main Warehouse in Quesna', 'Covered storage facilities equipped with temperature control to preserve the quality of chemical emulsions.')">
-<img alt="Warehouse Storage" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&amp;fit=crop&amp;w=600&amp;q=80"/>
+<div class="gallery-card" onclick="openImageModal('Images/Factory/AHM_9640.jpg', 'Main Warehouse in Quesna', 'Covered storage facilities equipped with temperature control to preserve the quality of chemical emulsions.')">
+<img alt="Warehouse Storage" src="Images/Factory/AHM_9640.jpg"/>
 <div class="gallery-overlay">
 <span class="badge bg-info text-dark w-auto mb-2 align-self-start">Warehousing &amp; Storage</span>
 <h5 class="fw-bold mb-1">Storage &amp; Distribution Area</h5>
@@ -952,8 +960,8 @@ document.addEventListener('keydown', function (e) {
 </div>
 <!-- Image Item 4 -->
 <div class="col-md-4 gallery-item lines" data-aos="fade-up">
-<div class="gallery-card" onclick="openImageModal('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&amp;fit=crop&amp;w=1000&amp;q=80', 'Chemical Filling &amp; Packaging', 'Filling lines for approved drums and containers to ensure safe chemical transportation.')">
-<img alt="Packaging Line" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&amp;fit=crop&amp;w=600&amp;q=80"/>
+<div class="gallery-card" onclick="openImageModal('Images/Factory/AHM_9641.jpg', 'Chemical Filling &amp; Packaging', 'Filling lines for approved drums and containers to ensure safe chemical transportation.')">
+<img alt="Packaging Line" src="Images/Factory/AHM_9641.jpg"/>
 <div class="gallery-overlay">
 <span class="badge bg-warning text-dark w-auto mb-2 align-self-start">Blending &amp; Filling Lines</span>
 <h5 class="fw-bold mb-1">Safe Filling Units</h5>

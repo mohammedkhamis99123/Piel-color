@@ -39,8 +39,7 @@
     font-size: clamp(40px, 6vw, 68px);
     margin: 18px 0;
     color: white;
-    font-family: Georgia, serif;
-}
+      font-family: 'MyCustomFont', 'Inter', sans-serif !important;}
 
 .products-hero p {
     color: #e3ddd6;

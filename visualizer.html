@@ -16,6 +16,13 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
 <style>
+
+          @font-face {
+    font-family: 'MyCustomFont';
+    src: url('assets/fonts/Fraunces-Italic-VariableFont_SOFT,WONK,opsz,wght.ttf') format('truetype'); /* لو الخط بصيغة woff2 غيرها لـ format('woff2') */
+    font-weight: normal;
+    font-style: normal;
+}
     :root {
       --leather-mahogany: #6B2D1B;
       --leather-tan: #C88242;
@@ -28,14 +35,14 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'MyCustomFont', sans-serif;
       background-color: var(--bg-cream);
       color: var(--text-dark);
       overflow-x: hidden;
     }
 
     h1, h2, h3, h4, h5, h6 {
-      font-family: 'Inter', sans-serif;
+      font-family: 'MyCustomFont', sans-serif;
     }
 
     /* Pulse & Glow Effects */
