@@ -1,278 +1,566 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f8f3eb">
 
-    <title>Our Products | PIEL COLOR</title>
+    <title>PIEL COLOR | Products & Solutions</title>
 
-  <title>بييل كلر | Piel Color - الحلول الكيميائية المتقدمة لتشطيب ودباغة الجلود</title>
-  
-  <!-- Bootstrap 5 RTL CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css">
-  
-  <!-- FontAwesome 6 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" href="Images/logo-lrg.png">
 
-  <!-- AOS Animation Library CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-  
-  <link rel="icon" href="Images/logo-lrg.png">
-  <!-- Google Fonts: Cairo & Tajawal -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- Fonts: Same as Homepage -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+          rel="stylesheet">
+
+    <!-- Shared Homepage CSS -->
     <link rel="stylesheet" href="assets/Css/Index.css">
 
-    <!-- Products styles -->
+    <!-- Products Page CSS -->
     <link rel="stylesheet" href="assets/Css/Products.css">
+
 </head>
 
 <body>
 
-   <!-- Top Info Bar -->
-  <div class="top-bar py-2 d-none d-xl-block">
-    <div class="container-fluid d-flex justify-content-between align-items-center">
-      <div class="d-flex gap-4">
-        <span><i class="pulse-dot me-1"></i> Quesna factory operating at full capacity: Industrial Zone, Menoufia</span>
-        <span><i class="fa-solid fa-envelope text-warning me-1"></i> egypt@pielcolor.com</span>
-        <span><i class="fa-solid fa-phone text-warning me-1"></i> +20 (048) 2590-123</span>
-      </div>
-      <div class="d-flex gap-3 align-items-center">
-        <span class="badge bg-danger">Egypt / Spain</span>
-        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="#"><i class="fa-brands fa-facebook"></i></a>
-        <a href="#"><i class="fa-solid fa-globe"></i> Global Website</a>
-      </div>
-    </div>
-  </div>
+    <!-- =====================================
+         SAME TOP BAR AS HOMEPAGE
+    ====================================== -->
 
-  <!-- Main Navigation -->
-  <nav class="navbar navbar-expand-xl navbar-piel sticky-top py-3">
-    <div class="container-fluid">
-      <a class="navbar-brand d-flex align-items-center " style="gap:2px" href="#" onclick="navigateTo('home')">
-        <div class="brand-icon">
-          <img src="Images/logo-lrg.png" style="width: 55px; height: auto;">
-        </div>
-        <div class="brand-text">
-          <div class="brand-title">PIEL COLOR</div>
-          <div class="brand-subtitle">CHEMICALS & LEATHER FINISHING</div>
-        </div>
+  <div class="topline"><div class="container"><div>PIEL COLOR · Leather chemicals & finishing systems</div><div class="top-right"><a href="mailto:Info@pielcolorsae.com">Info@pielcolorsae.com</a> &nbsp; | &nbsp; Quesna, Egypt</div></div></div>
+  <header>
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html">
+        <img src="Images/logo-lrg.png" alt="PIEL COLOR logo">
+        <div><div class="brand-name">PIEL COLOR</div><div class="brand-sub">CHEMICALS & LEATHER FINISHING</div></div>
       </a>
-
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#pielNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-     <div class="collapse navbar-collapse" id="pielNavbar">
-<ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-1">
-<li class="nav-item">
-<a class="nav-link active-page" href="index.html" id="nav-home"  >Home</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="about.html" id="nav-about" >About Us</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="Our-products.html" id="nav-products" >Products</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="gallery.html" id="nav-gallery" >Factory</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="sustainability.html" id="nav-sustainability" >Sustainability</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="support.html" id="nav-support" >Technical Support</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="contact.html" id="nav-contact" >Contact</a>
-</li>
-</ul>
-<div>
-<a class="btn btn-leather-primary text-nowrap" href="contact.html" >
-<i class="fa-solid fa-paper-plane me-1"></i> Request Samples
-</a>
-</div>
-</div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation"><i class="fa-solid fa-bars"></i></button>
+      <nav id="mainNav">
+        <a href="index.html">Home</a><a href="about.html">About us</a><a href="Our-products.html">Products</a><a href="gallery.html">Factory</a><a href="sustainability.html">Sustainability</a><a href="support.html">Technical support</a><a href="contact.html">Contact</a>
+      </nav>
+      <a class="nav-cta" href="contact.html">Request samples <i class="fa-solid fa-arrow-right"></i></a>
     </div>
-  </nav>
+  </header>
 
 
-    <main class="products-page">
+    <!-- =====================================
+         PRODUCTS PAGE CONTENT
+    ====================================== -->
+
+    <main>
+
+        <!-- Products Hero -->
 
         <section class="products-hero">
-            <div class="products-hero-content">
-                <span class="hero-label">PIEL COLOR COLLECTION</span>
 
-                <h1>Our Products</h1>
+            <div class="container">
 
-                <p>
-                    Discover our premium leather collections,
-                    crafted with quality, passion and innovation.
-                </p>
+                <div class="products-hero-content">
 
-                <span class="hero-line"></span>
+                    <span class="products-kicker">
+
+                        <i class="fa-solid fa-flask"></i>
+
+                        PIEL COLOR COLLECTION
+
+                    </span>
+
+                    <h1>
+
+                        Discover Our
+
+                        <span>Products &amp; Solutions</span>
+
+                    </h1>
+
+                    <p>
+
+                        Explore our complete range of specialty chemicals,
+                        dyes and leather finishing systems, developed to
+                        deliver exceptional performance and quality.
+
+                    </p>
+
+                    <div class="products-hero-actions">
+
+                        <a href="#collection" class="btn-brown">
+
+                            Explore Collection
+
+                            <i class="fa-solid fa-arrow-down"></i>
+
+                        </a>
+
+                        <a href="contact.html" class="btn-outline-cream">
+
+                            Request Samples
+
+                            <i class="fa-regular fa-paper-plane"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
             </div>
+
         </section>
 
-        <section class="products-section">
 
-            <div class="products-heading">
-                <div>
-                    <span class="section-label">OUR COLLECTION</span>
-                    <h2>Explore Our Products</h2>
-                    <p>Discover materials designed for excellence.</p>
+        <!-- Collection Introduction -->
+
+        <section class="products-intro">
+
+            <div class="container">
+
+                <div class="products-intro-content">
+
+                    <span class="section-eyebrow">
+                        ENGINEERED FOR EXCELLENCE
+                    </span>
+
+                    <h2>
+
+                        Chemistry That
+
+                        <span>Transforms Leather</span>
+
+                    </h2>
+
+                    <p>
+
+                        From preparation and tanning to coloring and final
+                        finishing, discover integrated solutions designed
+                        to meet the evolving needs of the leather industry.
+
+                    </p>
+
                 </div>
 
-                <div class="products-counter">
-                    <span id="totalProducts">0</span>
-                    <small>Products</small>
-                </div>
-            </div>
-
-            <div id="productsGrid" class="products-grid">
-                <div class="products-loading">
-                    Loading products...
-                </div>
-            </div>
-
-            <div class="pagination-wrapper">
-                <div id="paginationInfo"></div>
-                <div id="pagination" class="pagination"></div>
             </div>
 
         </section>
+
+
+        <!-- Products Collection -->
+
+        <section class="products-section" id="collection">
+
+            <div class="container">
+
+                <div class="products-section-heading">
+
+                    <div>
+
+                        <span class="section-eyebrow">
+                            EXPLORE OUR RANGE
+                        </span>
+
+                        <h2>
+                            Our Products
+                        </h2>
+
+                    </div>
+
+                    <p>
+
+                        A carefully developed portfolio of products
+                        for every stage of leather manufacturing.
+
+                    </p>
+
+                </div>
+
+
+                <!-- Products Toolbar -->
+
+                <div class="products-toolbar">
+
+                    <div class="products-count">
+
+                        <strong id="totalProducts">0</strong>
+
+                        <span>Products Available</span>
+
+                    </div>
+
+                    <div class="products-toolbar-line"></div>
+
+                    <span class="products-toolbar-label">
+
+                        QUALITY. PERFORMANCE. INNOVATION.
+
+                    </span>
+
+                </div>
+
+
+                <!-- Dynamic Products -->
+
+                <div class="products-grid" id="productsGrid">
+
+                    <!-- Products.js renders products here -->
+
+                </div>
+
+
+                <!-- Empty State -->
+
+                <div class="products-empty" id="productsEmpty" hidden>
+
+                    <i class="fa-solid fa-box-open"></i>
+
+                    <h3>No Products Available</h3>
+
+                    <p>
+                        Our products will be available soon.
+                    </p>
+
+                </div>
+
+
+                <!-- Pagination -->
+
+                <div class="products-pagination-wrapper">
+
+                    <div id="paginationInfo"
+                         class="pagination-info">
+
+                    </div>
+
+                    <nav aria-label="Products pagination">
+
+                        <ul class="pagination" id="pagination">
+
+                        </ul>
+
+                    </nav>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Brand CTA -->
+
+        <section class="products-cta">
+
+            <div class="container">
+
+                <div class="products-cta-content">
+
+                    <span class="section-eyebrow">
+                        NEED TECHNICAL ASSISTANCE?
+                    </span>
+
+                    <h2>
+
+                        Let's Find the Right
+
+                        <span>Solution for You.</span>
+
+                    </h2>
+
+                    <p>
+
+                        Our technical team is ready to help you select
+                        the right products for your leather manufacturing
+                        requirements.
+
+                    </p>
+
+                    <a href="contact.html" class="btn-brown">
+
+                        Contact Our Team
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             PRODUCT DETAILS MODAL
+        ====================================== -->
+
+        <div class="product-details-modal"
+             id="productOverlay"
+             aria-hidden="true">
+
+            <div class="modal-backdrop"></div>
+
+            <div class="modal-content"
+                 role="dialog"
+                 aria-modal="true"
+                 aria-labelledby="modalName">
+
+                <button type="button"
+                        class="modal-close"
+                        id="closeProduct"
+                        aria-label="Close">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+
+                <div class="modal-image-wrapper">
+
+                    <div class="modal-image-container">
+                        <div class="modal-image-toolbar">
+                            <button type="button" id="zoomIn" title="Zoom In">
+                                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            </button>
+
+                            <button type="button" id="zoomOut" title="Zoom Out">
+                                <i class="fa-solid fa-magnifying-glass-minus"></i>
+                            </button>
+
+                            <button type="button" id="toggleFullscreen" title="Full Screen">
+                                <i class="fa-solid fa-expand"></i>
+                            </button>
+                        </div>
+                        <img src=""
+                             alt="Product"
+                             id="modalImage"
+                             class="modal-image">
+
+                    </div>
+
+                    <span class="modal-image-caption">
+                        PIEL COLOR PROFESSIONAL COLLECTION
+                    </span>
+
+                </div>
+
+
+                <div class="modal-product-info">
+
+                    <span id="modalCategory"
+                          class="modal-category">
+                    </span>
+
+                    <h2 id="modalName"></h2>
+
+                    <div class="modal-divider"></div>
+
+                    <p id="modalDescription"
+                       class="modal-description">
+                    </p>
+
+                    <div class="modal-features-wrapper">
+
+                        <h3>Product Specifications</h3>
+
+                        <ul id="modalFeatures"
+                            class="modal-features">
+                        </ul>
+
+                    </div>
+
+                    <a href="contact.html" class="btn-brown">
+
+                        Request Product Information
+
+                        <i class="fa-regular fa-paper-plane"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </main>
 
-    <!-- Product Details Overlay -->
-    <div id="productOverlay" class="product-overlay">
 
-        <div class="product-details-modal">
+    <!-- =====================================
+         SAME FOOTER AS HOMEPAGE
+    ====================================== -->
 
-            <button class="modal-close" id="closeProduct">
-                &times;
-            </button>
+    <footer class="site-footer">
 
-            <div class="modal-image">
-                
-<div class="modal-image-wrapper" id="modalImageWrapper">
+        <div class="container">
 
-    <span class="zoom-hint">
-        Click image or use controls to zoom
-    </span>
+            <div class="row g-5">
 
-    <img id="modalImage" src="" alt="Product Image">
+                <div class="col-lg-4">
 
-    <div class="zoom-controls">
-        <button type="button" onclick="zoomIn()" title="Zoom In">
-            <i class="fa-solid fa-plus"></i>
-        </button>
+                    <div class="footer-brand">
 
-        <button type="button" onclick="zoomOut()" title="Zoom Out">
-            <i class="fa-solid fa-minus"></i>
-        </button>
+                        <span class="brand-mark">
 
-     <button type="button" onclick="toggleImageFullscreen(event)" title="Full Screen">
-    <i class="fa-solid fa-expand"></i>
-</button>
-    </div>
+                            <img src="Images/logo-lrg.png"
+                                 alt="PIEL COLOR logo">
 
-</div>
+                        </span>
+
+                        <span class="brand-title">
+                            PIEL COLOR
+                        </span>
+
+                    </div>
+
+                    <p class="footer-copy">
+
+                        A global innovator and manufacturer of chemicals,
+                        dyes, and leather finishing systems. Decades of
+                        quality, supported by our branch and factory
+                        in Quesna, Egypt.
+
+                    </p>
+
+                    <div class="social-links">
+
+                        <a href="#" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+
+                        <a href="#" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+
+                        <a href="#" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-6 col-lg-2">
+
+                    <h4>Quick Links</h4>
+
+                    <ul class="footer-links">
+
+                        <li><a href="index.html">Home</a></li>
+
+                        <li><a href="about.html">About Us</a></li>
+
+                        <li><a href="Our-products.html">Products &amp; Solutions</a></li>
+
+                        <li><a href="gallery.html">Factory Gallery</a></li>
+
+                        <li><a href="sustainability.html">Sustainability</a></li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="col-6 col-lg-3">
+
+                    <h4>Expertise &amp; Solutions</h4>
+
+                    <ul class="footer-links">
+
+                        <li><a href="Our-products.html">Wet End Retanning Agents</a></li>
+
+                        <li><a href="Our-products.html">Aniline Dyes &amp; Pigments</a></li>
+
+                        <li><a href="Our-products.html">Matte &amp; Gloss Topcoats</a></li>
+
+                        <li><a href="sustainability.html">Sustainable Green Tanning</a></li>
+
+                        <li><a href="support.html">Technical Support</a></li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="col-lg-3">
+
+                    <h4>Quesna Factory</h4>
+
+                    <div class="footer-contact">
+
+                        <div>
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            Industrial Zone, Kafr El-Raml,
+                            Quesna, Menoufia, Egypt.
+
+                        </div>
+
+                        <div class="mt-2">
+
+                            <i class="fa-solid fa-phone"></i>
+
+                            <a href="tel:+200482590509">
+                                +20 48 2590509
+                            </a>
+
+                        </div>
+
+                        <div class="mt-2">
+
+                            <i class="fa-regular fa-envelope"></i>
+
+                            <a href="mailto:Info@pielcolorsae.com">
+                                Info@pielcolorsae.com
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
 
             </div>
 
-            <div class="modal-content">
 
-                <span id="modalCategory" class="modal-category"></span>
+            <div class="footer-bottom">
 
-                <h2 id="modalName"></h2>
+                <span>
+                    © 2026 PIEL COLOR SAE. All Rights Reserved.
+                </span>
 
-                <p id="modalDescription"></p>
+                <div class="d-flex gap-3">
 
-                <h4>Product Features</h4>
+                    <a href="#">Privacy Policy</a>
 
-                <ul id="modalFeatures"></ul>
+                    <a href="#">Terms &amp; Conditions</a>
 
-                <div class="modal-footer">
-                    <span>PIEL COLOR</span>
-                    <span>Premium Leather Collection</span>
                 </div>
 
             </div>
 
         </div>
 
-    </div>
+    </footer>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="row g-4 mb-5">
-        <div class="col-lg-4">
-          <div class="d-flex align-items-center gap-2 mb-3">
-            <div class="brand-icon">
-          <img src="Images/logo-lrg.png" style="width: 55px; height: auto;">
-            </div>
-            <span class="fs-4 fw-bold text-white">PIEL COLOR</span>
-          </div>
-          <p class="small leading-relaxed mb-3">
-            A global innovator and manufacturer of chemicals, dyes, and leather finishing systems. Decades of quality, supported by our branch and factory in Quesna, Egypt.
-          </p>
-          <div class="d-flex gap-3 fs-5">
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          </div>
-        </div>
 
-        <div class="col-lg-2 col-6">
-          <h5>Quick Links</h5>
-          <ul class="list-unstyled d-flex flex-column gap-2 small">
-            <li><a href="#" onclick="navigateTo('home')">Home</a></li>
-            <li><a href="#" onclick="navigateTo('about')">About Us</a></li>
-            <li><a href="#" onclick="navigateTo('products')">Products & Solutions</a></li>
-            <li><a href="#" onclick="navigateTo('gallery')">Factory Gallery</a></li>
-          </ul>
-        </div>
+    <!-- Scripts -->
 
-        <div class="col-lg-3 col-6">
-          <h5>Expertise & Solutions</h5>
-          <ul class="list-unstyled d-flex flex-column gap-2 small">
-            <li><a href="#" onclick="navigateTo('products')">Wet End Retanning Agents</a></li>
-            <li><a href="#" onclick="navigateTo('products')">Aniline Dyes & Pigments</a></li>
-            <li><a href="#" onclick="navigateTo('products')">Matte & Gloss Topcoats</a></li>
-            <li><a href="#" onclick="navigateTo('sustainability')">Sustainable Green Tanning</a></li>
-          </ul>
-        </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-        <div class="col-lg-3">
-          <h5>Quesna Factory</h5>
-          <p class="small text-light opacity-75">
-            Industrial Zone, Kafr El-Raml, Quesna, Menoufia, Egypt.<br>
-              Phone: +20 48 2590509<br/>
-            Email: Info@pielcolorsae.com
-          </p>
-        </div>
-      </div>
-
-      <hr class="border-secondary">
-
-      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center small pt-3">
-        <div>All Rights Reserved © 2026 PIEL COLOR SAE - Professional Design & Development.</div>
-        <div class="d-flex gap-3 mt-2 mt-md-0">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms & Conditions</a>
-        </div>
-      </div>
-    </div>
-  </footer>
     <script src="assets/Js/Products.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
 
 </body>
 </html>

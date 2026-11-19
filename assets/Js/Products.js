@@ -275,15 +275,7 @@ modalImage.addEventListener("click", function () {
 });
 
 // Mouse wheel zoom
-imageWrapper.addEventListener("wheel", function (event) {
-    event.preventDefault();
 
-    if (event.deltaY < 0) {
-        zoomIn();
-    } else {
-        zoomOut();
-    }
-}, { passive: false });
 
 // Drag image with mouse
 modalImage.addEventListener("mousedown", function (event) {
@@ -337,3 +329,59 @@ async function toggleImageFullscreen(event) {
 document.addEventListener("fullscreenchange", function () {
     resetZoom();
 });
+
+let currentZoom = 1;
+
+const productOverlay = document.getElementById("productOverlay");
+
+const zoomInBtn = document.getElementById("zoomIn");
+const zoomOutBtn = document.getElementById("zoomOut");
+const fullscreenBtn = document.getElementById("toggleFullscreen");
+
+const MIN_ZOOM = 1;
+const MAX_ZOOM = 3;
+const ZOOM_STEP = 0.25;
+
+function updateImageZoom() {
+    modalImage.style.transform = `scale(${currentZoom})`;
+
+    modalImage.classList.toggle("zoomed", currentZoom > 1);
+}
+
+zoomInBtn.addEventListener("click", () => {
+    currentZoom = Math.min(MAX_ZOOM, currentZoom + ZOOM_STEP);
+    updateImageZoom();
+});
+
+zoomOutBtn.addEventListener("click", () => {
+    currentZoom = Math.max(MIN_ZOOM, currentZoom - ZOOM_STEP);
+    updateImageZoom();
+});
+
+fullscreenBtn.addEventListener("click", async () => {
+    try {
+        if (!document.fullscreenElement) {
+            await productOverlay.requestFullscreen();
+            fullscreenBtn.innerHTML =
+                '<i class="fa-solid fa-compress"></i>';
+        } else {
+            await document.exitFullscreen();
+        }
+    } catch (error) {
+        console.error("Fullscreen error:", error);
+    }
+});
+
+document.addEventListener("fullscreenchange", () => {
+    const isFullscreen = document.fullscreenElement === productOverlay;
+
+    fullscreenBtn.innerHTML = isFullscreen
+        ? '<i class="fa-solid fa-compress"></i>'
+        : '<i class="fa-solid fa-expand"></i>';
+});
+
+// Reset zoom whenever modal closes
+function resetImageZoom() {
+    currentZoom = 1;
+    updateImageZoom();
+}
