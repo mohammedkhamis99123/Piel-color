@@ -52,7 +52,6 @@ function renderProducts() {
                 <img
                     src="Images/Products/${encodeURIComponent(product.image)}"
                     alt="${escapeHTML(product.name)}"
-                    loading="lazy"
                     onerror="this.style.opacity='0';"
                 >
 

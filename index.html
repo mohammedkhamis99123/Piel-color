@@ -1,1304 +1,246 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>PIEL COLOR | Home</title>
-<!-- Bootstrap 5 RTL CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
-<!-- FontAwesome 6 -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet"/>
-<!-- AOS Animation Library CSS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"/>
-<link href="Images/logo-lrg.png" rel="icon"/>
-<!-- Google Fonts: Inter -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<style>
- @font-face {
-    font-family: 'MyCustomFont';
-    src: url('assets/fonts/Fraunces-Italic-VariableFont_SOFT,WONK,opsz,wght.ttf') format('truetype'); /* لو الخط بصيغة woff2 غيرها لـ format('woff2') */
-    font-weight: normal;
-    font-style: normal;
-}
-    :root {
-      --leather-mahogany: #6B2D1B;
-      --leather-tan: #C88242;
-      --leather-light-tan: #EEDCC8;
-      --navy-dark: #0F1B29;
-      --bg-cream: #FDFBF7;
-      --bg-card: #FFFFFF;
-      --text-dark: #1E232A;
-      --text-muted: #5C6573;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PIEL COLOR | The Art of Leather Chemistry</title>
+  <meta name="description" content="PIEL COLOR develops specialty chemicals, dyes and finishing systems for the leather industry.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root{
+      --cream:#f4f0e7;--paper:#fbf9f4;--ink:#28251f;--muted:#777166;
+      --brown:#654331;--brown-dark:#30251e;--tan:#b28a63;--line:#ddd5c8;
+      --serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',Arial,sans-serif;
     }
-
-    body {
-      font-family: 'MyCustomFont', sans-serif;
-      background-color: var(--bg-cream);
-      color: var(--text-dark);
-      overflow-x: hidden;
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px}
+    a{color:inherit;text-decoration:none}img{display:block;max-width:100%}.container{width:min(1220px,calc(100% - 64px));margin:auto}
+    .topline{height:36px;background:var(--brown-dark);color:#e8dfd2;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;display:flex;align-items:center}
+    .topline .container{display:flex;justify-content:space-between;align-items:center}.topline a{opacity:.85}
+    header{height:88px;background:rgba(251,249,244,.96);position:sticky;top:0;z-index:20;border-bottom:1px solid rgba(101,67,49,.13);backdrop-filter:blur(12px)}
+    .nav-wrap{height:100%;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px}.brand img{width:52px;height:52px;object-fit:contain}
+    .brand-name{font:600 22px var(--serif);letter-spacing:2px}.brand-sub{font-size:8px;letter-spacing:2.3px;color:var(--muted);margin-top:4px}
+    nav{display:flex;align-items:center;gap:31px;font-size:11px;letter-spacing:1.15px;text-transform:uppercase;color:#4d473f}
+    nav a{transition:.25s}nav a:hover{color:var(--tan)}
+    .nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 21px;border:1px solid var(--brown);font-size:10px;letter-spacing:1.2px;text-transform:uppercase;transition:.25s}
+    .nav-cta{background:var(--brown);color:#fff}.nav-cta:hover,.btn-dark:hover{background:#8b684c;border-color:#8b684c;color:#fff}
+    .menu-toggle{display:none;background:none;border:0;font-size:22px;color:var(--brown)}
+    .hero{min-height:650px;position:relative;display:flex;align-items:center;color:#fff;background:#38291f url('images/Factory/AHM_9640.jpg') center 54%/cover no-repeat}
+    .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(28,22,17,.78) 0%,rgba(34,25,19,.52) 48%,rgba(34,25,19,.10) 100%)}
+    .hero-content{position:relative;z-index:1;padding:105px 0 115px;max-width:710px}
+    .eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--tan);font-weight:700;display:flex;align-items:center;gap:14px}
+    .eyebrow:before{content:"";width:36px;height:1px;background:currentColor}
+    .hero h1{font:400 clamp(46px,6vw,78px)/1.08 var(--serif);margin:27px 0 24px;max-width:690px}
+    .hero h1 em{font-weight:400;color:#d5b996}.hero p{font-size:15px;line-height:1.9;color:#e6ded4;max-width:560px;margin:0 0 34px}
+    .btn-light{color:#fff;border-color:rgba(255,255,255,.75)}.btn-light:hover{background:#fff;color:var(--brown)}
+    .hero-note{position:absolute;right:5%;bottom:44px;z-index:2;writing-mode:vertical-rl;letter-spacing:3px;text-transform:uppercase;font-size:9px;color:#e8dfd2}
+    .intro{padding:118px 0 105px}.intro-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:105px;align-items:center}
+    .intro h2,.section-heading h2,.process-copy h2,.cta h2{font:400 clamp(34px,4vw,52px)/1.2 var(--serif);margin:20px 0}
+    .intro p,.section-heading p,.process-copy p{line-height:1.95;color:var(--muted);font-size:14px}
+    .text-link{display:inline-flex;align-items:center;gap:14px;margin-top:20px;padding-bottom:8px;border-bottom:1px solid var(--tan);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--brown)}
+    .intro-visual{position:relative;padding:0 0 35px 35px}.intro-visual:before{content:"";position:absolute;left:0;bottom:0;width:72%;height:72%;background:#e8dfd1;z-index:0}
+    .intro-visual img{position:relative;z-index:1;width:100%;height:490px;object-fit:cover}
+    .image-caption{position:absolute;z-index:2;right:-20px;bottom:75px;background:var(--brown);color:#fff;padding:22px 26px;font:italic 17px var(--serif)}
+    .collections{padding:105px 0 115px;background:var(--cream)}
+    .section-heading{text-align:center;max-width:700px;margin:0 auto 55px}.section-heading .eyebrow{justify-content:center}
+    .section-heading .eyebrow:after{content:"";width:36px;height:1px;background:currentColor}
+    .collection-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
+    .collection-card{position:relative;min-height:410px;overflow:hidden;background:#c6b6a3;color:#fff}
+    .collection-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s}
+    .collection-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 28%,rgba(24,19,15,.75) 100%)}
+    .collection-card:hover img{transform:scale(1.06)}
+    .collection-info{position:absolute;z-index:1;left:24px;right:24px;bottom:25px}
+    .collection-info span{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#e6c9a9}
+    .collection-info h3{font:400 27px var(--serif);margin:8px 0}
+    .collection-info p{font-size:11px;line-height:1.7;color:#eee4d9;margin:0 0 15px}
+    .collection-info a{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;border-bottom:1px solid #d6b995;padding-bottom:5px}
+    .statement{padding:112px 0;background:var(--brown-dark);color:#f7f1e8;text-align:center;position:relative;overflow:hidden}
+    .statement:before,.statement:after{content:"";position:absolute;width:310px;height:310px;border:1px solid rgba(220,190,158,.18);border-radius:50%}
+    .statement:before{left:-150px;top:-170px}.statement:after{right:-150px;bottom:-180px}
+    .statement .eyebrow{justify-content:center;color:#c9a77f}.statement .eyebrow:after{content:"";width:36px;height:1px;background:currentColor}
+    .statement h2{font:400 clamp(34px,4.5vw,58px)/1.25 var(--serif);max-width:900px;margin:25px auto}
+    .statement p{max-width:650px;margin:0 auto;color:#cfc4b7;line-height:1.9;font-size:13px}
+    .process{padding:115px 0}.process-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:95px;align-items:center}
+    .process-photo{height:570px;position:relative}.process-photo img{width:100%;height:100%;object-fit:cover}
+    .process-photo:after{content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid var(--tan);z-index:-1}
+    .process-copy .eyebrow{margin-bottom:25px}.process-copy h2{margin-top:0}
+    .process-steps{margin-top:34px;border-top:1px solid var(--line)}
+    .step{display:grid;grid-template-columns:45px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+    .step b{font:italic 18px var(--serif);color:var(--tan)}.step h4{font:500 15px var(--serif);margin:0 0 5px}.step p{font-size:11px;line-height:1.7;margin:0}
+    .numbers{background:#e9e1d5;padding:62px 0}.numbers-grid{display:grid;grid-template-columns:repeat(4,1fr);text-align:center}
+    .number{border-right:1px solid #cfc3b3}.number:last-child{border:0}.number strong{font:400 42px var(--serif);color:var(--brown)}.number span{display:block;font-size:9px;letter-spacing:1.4px;text-transform:uppercase;color:#71675b;margin-top:8px}
+    .sustain{padding:115px 0}.sustain-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:90px;align-items:center}
+    .sustain-photo{height:430px}.sustain-photo img{width:100%;height:100%;object-fit:cover}
+    .sustain-copy h2{font:400 44px/1.2 var(--serif);margin:20px 0}.sustain-copy p{color:var(--muted);font-size:13px;line-height:1.9}
+    .cta{padding:90px 0;background:var(--cream);text-align:center}.cta h2{max-width:750px;margin:18px auto 25px}.cta p{color:var(--muted);font-size:13px;margin-bottom:28px}
+    .btn-dark{background:var(--brown);color:#fff}
+    footer{background:#29231e;color:#e9e1d6;padding:70px 0 25px}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:55px;padding-bottom:55px}
+    .footer-brand{font:500 24px var(--serif);letter-spacing:2px}.footer-text{max-width:310px;color:#bdb2a5;font-size:11px;line-height:1.9;margin-top:18px}
+    footer h4{font:500 16px var(--serif);margin:4px 0 20px;color:#fff}footer ul{list-style:none;padding:0;margin:0}footer li{margin:0 0 13px;font-size:11px;color:#bdb2a5}footer a:hover{color:#d7b58e}
+    .footer-bottom{border-top:1px solid #4b4037;padding-top:22px;display:flex;justify-content:space-between;color:#a99e92;font-size:9px;letter-spacing:.5px}
+    .social{display:flex;gap:17px;margin-top:22px}.social a{font-size:14px;color:#d8c9b8}
+    @media(max-width:1000px){nav{gap:15px}.nav-cta{padding:12px}.intro-grid,.process-grid,.sustain-grid{gap:45px}.collection-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:760px){
+      .container{width:min(100% - 38px,600px)}.topline .container{justify-content:center}.topline .top-right{display:none}
+      header{height:72px}.brand img{width:43px;height:43px}.brand-name{font-size:19px}.menu-toggle{display:block}
+      nav{display:none;position:absolute;top:72px;left:0;right:0;background:var(--paper);padding:25px 25px 30px;align-items:stretch;gap:0;box-shadow:0 15px 20px #0001}
+      nav.open{display:flex;flex-direction:column}nav a{padding:13px 0;border-bottom:1px solid var(--line)}.nav-cta{display:none}
+      .hero{min-height:600px;background-position:58% center}.hero-content{padding:85px 0}.hero h1{font-size:48px}.hero-note{display:none}
+      .intro,.collections,.process,.sustain{padding:75px 0}.intro-grid,.process-grid,.sustain-grid{grid-template-columns:1fr;gap:40px}
+      .intro-visual{padding-left:18px}.intro-visual img{height:370px}.image-caption{right:-5px;bottom:50px}
+      .collection-grid{gap:12px}.collection-card{min-height:330px}.collection-info{left:16px;right:16px;bottom:18px}.collection-info h3{font-size:23px}
+      .statement{padding:80px 0}.process-photo{height:390px;margin-right:15px}.numbers-grid{grid-template-columns:repeat(2,1fr);gap:28px}.number:nth-child(2){border:0}.number strong{font-size:35px}
+      .sustain-photo{height:320px}.sustain-copy h2{font-size:37px}.footer-grid{grid-template-columns:1fr 1fr;gap:35px 22px}.footer-bottom{gap:12px;flex-direction:column}
     }
-
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'MyCustomFont', sans-serif;
-    }
-
-    /* Pulse & Glow Effects */
-    .pulse-dot {
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      background-color: #22c55e;
-      border-radius: 50%;
-      box-shadow: 0 0 0 rgba(34, 197, 94, 0.4);
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
-      70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
-    }
-
-    /* Top Utility Bar */
-    .top-bar {
-      background-color: var(--navy-dark);
-      color: #E2E8F0;
-      font-size: 0.85rem;
-      border-bottom: 2px solid var(--leather-tan);
-    }
-    .top-bar a {
-      color: #E2E8F0;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .top-bar a:hover {
-      color: var(--leather-tan);
-    }
-
-    /* Main Navbar */
-    .navbar-piel {
-      background-color: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-      transition: all 0.3s ease;
-    }
-    .brand-icon {
-      width: 55px;
-      height: 55px;
-      /*background: linear-gradient(135deg, var(--leather-mahogany), var(--leather-tan));*/
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 1.25rem;
-      box-shadow: 0 4px 10px rgba(107, 45, 27, 0.3);
-      animation: float 3s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-4px); }
-    }
-
-    .brand-title {
-      font-weight: 800;
-      font-size: 1.35rem;
-      color: var(--navy-dark);
-      letter-spacing: -0.5px;
-    }
-    .brand-subtitle {
-      font-size: 0.7rem;
-      color: var(--leather-mahogany);
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-
-    .nav-link {
-      color: var(--navy-dark) !important;
-      font-weight: 600;
-      padding: 0.6rem 1rem !important;
-      border-radius: 8px;
-      transition: all 0.2s ease;
-    }
-    .nav-link:hover, .nav-link.active-page {
-      color: var(--leather-mahogany) !important;
-      background-color: rgba(200, 130, 66, 0.12);
-      transform: translateY(-1px);
-    }
-
-    /* Page Navigation Logic & Smooth Fade Transition */
-    .page-section { display: block; }
-    .page-section.active {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Buttons */
-    .btn-leather-primary {
-      background: linear-gradient(135deg, var(--leather-mahogany), #502113);
-      color: #fff;
-      border: none;
-      font-weight: 700;
-      padding: 0.75rem 1.8rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(107, 45, 27, 0.25);
-      transition: all 0.3s ease;
-    }
-    .btn-leather-primary:hover {
-      background: linear-gradient(135deg, #502113, var(--leather-mahogany));
-      color: #fff;
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 8px 25px rgba(107, 45, 27, 0.4);
-    }
-
-    .btn-leather-accent {
-      background: linear-gradient(135deg, var(--leather-tan), #a96328);
-      color: #fff;
-      border: none;
-      font-weight: 700;
-      padding: 0.75rem 1.8rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(200, 130, 66, 0.25);
-      transition: all 0.3s ease;
-    }
-    .btn-leather-accent:hover {
-      color: #fff;
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 8px 25px rgba(200, 130, 66, 0.4);
-    }
-
-    /* Hero Section */
-    .hero-banner {
-      background: linear-gradient(135deg, rgba(15, 27, 41, 0.93), rgba(107, 45, 27, 0.88)),
-                  url('Images/Pio-Laser-10.jpeg') center/cover no-repeat;
-      color: #fff;
-      padding: 110px 0 90px;
-      border-radius: 0 0 30px 30px;
-      position: relative;
-    }
-    .hero-badge {
-      background-color: rgba(200, 130, 66, 0.25);
-      border: 1px solid var(--leather-tan);
-      color: #F8D8B6;
-      padding: 6px 16px;
-      border-radius: 50px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      display: inline-block;
-      margin-bottom: 20px;
-      box-shadow: 0 0 15px rgba(200, 130, 66, 0.2);
-    }
-
-    /* Visualizer Tool */
-    .visualizer-card {
-      background: #FFFFFF;
-      border-radius: 20px;
-      border: 1px solid rgba(200, 130, 66, 0.2);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.06);
-      overflow: hidden;
-    }
-    .visualizer-preview-box {
-      height: 320px;
-      border-radius: 15px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.5s ease;
-      background-size: cover;
-      background-position: center;
-      box-shadow: inset 0 0 50px rgba(0,0,0,0.4);
-    }
-    .texture-overlay {
-      position: absolute;
-      inset: 0;
-      border-radius: 15px;
-      pointer-events: none;
-      mix-blend-mode: overlay;
-      opacity: 0.8;
-      transition: all 0.4s ease;
-    }
-
-    .swatch-btn {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      border: 3px solid #fff;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-      cursor: pointer;
-      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-    }
-    .swatch-btn:hover, .swatch-btn.active {
-      transform: scale(1.25);
-      border-color: var(--leather-tan);
-      box-shadow: 0 0 15px rgba(200, 130, 66, 0.5);
-    }
-
-    /* Cards & Hover Animations */
-    .custom-card {
-      background: var(--bg-card);
-      border-radius: 16px;
-      border: 1px solid rgba(0,0,0,0.05);
-      padding: 30px;
-      transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
-      height: 100%;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.02);
-    }
-    .custom-card:hover {
-      transform: translateY(-10px) scale(1.01);
-      box-shadow: 0 20px 40px rgba(107, 45, 27, 0.12);
-      border-color: rgba(200, 130, 66, 0.4);
-    }
-    .card-icon {
-      width: 65px;
-      height: 65px;
-      border-radius: 14px;
-      background: rgba(200, 130, 66, 0.12);
-      color: var(--leather-mahogany);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-      transition: transform 0.3s ease;
-    }
-    .custom-card:hover .card-icon {
-      transform: rotate(8deg) scale(1.1);
-    }
-
-    /* Factory Gallery Specific Styles */
-    .gallery-card {
-      position: relative;
-      border-radius: 16px;
-      overflow: hidden;
-      cursor: pointer;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-      transition: all 0.4s ease;
-    }
-    .gallery-card img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-    .gallery-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(15, 27, 41, 0.9), rgba(15, 27, 41, 0.2));
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 20px;
-      color: #fff;
-    }
-    .gallery-card:hover img {
-      transform: scale(1.1);
-    }
-    .gallery-card:hover .gallery-overlay {
-      opacity: 1;
-    }
-
-    /* Product & Gallery Filter Badges */
-    .filter-btn {
-      background: #EFE8DF;
-      color: var(--navy-dark);
-      border: none;
-      padding: 8px 20px;
-      border-radius: 30px;
-      font-weight: 600;
-      margin: 4px;
-      transition: all 0.3s ease;
-    }
-    .filter-btn.active, .filter-btn:hover {
-      background: var(--leather-mahogany);
-      color: #fff;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(107, 45, 27, 0.3);
-    }
-
-    /* Stats Banner */
-    .stats-section {
-      background: var(--navy-dark);
-      color: #fff;
-      border-radius: 24px;
-      padding: 50px 30px;
-      position: relative;
-      overflow: hidden;
-    }
-    .stats-number {
-      font-size: 2.8rem;
-      font-weight: 800;
-      color: var(--leather-tan);
-    }
-
-    /* Factory Location Box */
-    .factory-card {
-      background: linear-gradient(145deg, #ffffff, #f7f3ee);
-      border-left: 6px solid var(--leather-mahogany);
-      border-radius: 16px;
-      padding: 35px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.04);
-    }
-
-    /* Footer */
-    footer {
-      background-color: var(--navy-dark);
-      color: #A0AEC0;
-      padding-top: 70px;
-      padding-bottom: 30px;
-      border-top: 4px solid var(--leather-mahogany);
-    }
-    footer h5 {
-      color: #FFFFFF;
-      font-weight: 700;
-      margin-bottom: 22px;
-    }
-    footer a {
-      color: #CBD5E0;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    footer a:hover {
-      color: var(--leather-tan);
-    }
-
-    /* Toast notification */
-    .toast-container {
-      position: fixed;
-      bottom: 25px;
-      left: 25px;
-      z-index: 9999;
-    }
-    /* ================= CERTIFICATIONS ================= */
-
-.certifications-section {
-    background: #f8f6f2;
-}
-
-.certificate-card {
-    height: 100%;
-    background: #fff;
-    border: 1px solid #eae5dd;
-    border-radius: 14px;
-    overflow: hidden;
-    transition: all .3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, .04);
-}
-
-.certificate-card:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, .10);
-}
-
-.certificate-image {
-    position: relative;
-    height: 230px;
-    padding: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    overflow: hidden;
-}
-
-.certificate-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    transition: transform .4s ease;
-}
-
-.certificate-card:hover .certificate-image img {
-    transform: scale(1.04);
-}
-
-.certificate-zoom {
-    position: absolute;
-    inset: 0;
-    margin: auto;
-    width: 52px;
-    height: 52px;
-    border: none;
-    border-radius: 50%;
-    background: rgba(35, 27, 22, .88);
-    color: #fff;
-    font-size: 19px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transform: scale(.7);
-    transition: all .3s ease;
-    cursor: pointer;
-}
-
-.certificate-card:hover .certificate-zoom {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.certificate-zoom:hover {
-    background: #c49a62;
-    color: #211b17;
-}
-
-.certificate-info {
-    padding: 16px 10px;
-    text-align: center;
-    border-top: 1px solid #f0ede8;
-}
-
-.certificate-info h6 {
-    color: #4b3022;
-    font-weight: 800;
-    margin-bottom: 5px;
-}
-
-.certificate-info p {
-    color: #777;
-    font-size: 13px;
-    margin: 0;
-}
-
-/* ================= LIGHTBOX ================= */
-
-.certificate-lightbox {
-    position: fixed;
-    inset: 0;
-    z-index: 99999;
-    background: rgba(15, 12, 10, .94);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
-    opacity: 0;
-    visibility: hidden;
-    transition: all .3s ease;
-    cursor: zoom-out;
-}
-
-.certificate-lightbox.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.certificate-lightbox img {
-    max-width: 90%;
-    max-height: 88vh;
-    object-fit: contain;
-    border-radius: 5px;
-    box-shadow: 0 15px 60px rgba(0, 0, 0, .4);
-    transform: scale(.9);
-    transition: transform .3s ease;
-    cursor: default;
-}
-
-.certificate-lightbox.active img {
-    transform: scale(1);
-}
-
-.lightbox-close {
-    position: absolute;
-    top: 22px;
-    right: 28px;
-    width: 45px;
-    height: 45px;
-    border: 1px solid rgba(255,255,255,.3);
-    border-radius: 50%;
-    background: rgba(255,255,255,.1);
-    color: #fff;
-    font-size: 22px;
-    cursor: pointer;
-    transition: all .3s ease;
-}
-
-.lightbox-close:hover {
-    background: #c49a62;
-    color: #211b17;
-    transform: rotate(90deg);
-}
-
-@media (max-width: 576px) {
-    .certificate-image {
-        height: 170px;
-        padding: 10px;
-    }
-
-    .certificate-lightbox {
-        padding: 15px;
-    }
-
-    .certificate-lightbox img {
-        max-width: 100%;
-        max-height: 80vh;
-    }
-
-    .lightbox-close {
-        top: 12px;
-        right: 12px;
-    }
-
-    .certificate-zoom {
-        opacity: 1;
-        transform: scale(.85);
-        width: 40px;
-        height: 40px;
-        font-size: 15px;
-    }
-}
+    @media(max-width:430px){.collection-grid{grid-template-columns:1fr}.collection-card{min-height:390px}.footer-grid{grid-template-columns:1fr}.hero h1{font-size:42px}}
   </style>
 </head>
 <body>
-<div class="toast-container">
-<div aria-atomic="true" aria-live="assertive" class="toast align-items-center text-bg-dark border-0 p-2" id="liveToast" role="alert">
-<div class="d-flex">
-<div class="toast-body text-white" id="toastMessage">
-          Options updated successfully.
+  <div class="topline"><div class="container"><div>PIEL COLOR · Leather chemicals & finishing systems</div><div class="top-right"><a href="mailto:Info@pielcolorsae.com">Info@pielcolorsae.com</a> &nbsp; | &nbsp; Quesna, Egypt</div></div></div>
+  <header>
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html">
+        <img src="Images/logo-lrg.png" alt="PIEL COLOR logo">
+        <div><div class="brand-name">PIEL COLOR</div><div class="brand-sub">CHEMICALS & LEATHER FINISHING</div></div>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation"><i class="fa-solid fa-bars"></i></button>
+      <nav id="mainNav">
+        <a href="index.html">Home</a><a href="about.html">About us</a><a href="Our-products.html">Products</a><a href="gallery.html">Factory</a><a href="sustainability.html">Sustainability</a><a href="support.html">Technical support</a><a href="contact.html">Contact</a>
+      </nav>
+      <a class="nav-cta" href="contact.html">Request samples <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container"><div class="hero-content">
+        <div class="eyebrow">Crafted for the future of leather</div>
+        <h1>Where chemistry meets the <em>art of leather.</em></h1>
+        <p>We create advanced chemical solutions, expressive colors and refined finishing systems that bring leather to life — from the first treatment to the final touch.</p>
+        <a class="btn btn-light" href="Our-products.html">Discover our solutions <i class="fa-solid fa-arrow-right"></i></a>
+      </div></div>
+      <div class="hero-note">Innovation · Craft · Quality</div>
+    </section>
+
+    <section class="intro">
+      <div class="container intro-grid">
+        <div>
+          <div class="eyebrow">The PIEL COLOR identity</div>
+          <h2>Experience, research and innovation in every detail.</h2>
+          <p>PIEL COLOR develops and manufactures high-performance specialty chemicals, dyes and finishing systems for the leather industry. We combine technical knowledge with a deep understanding of leather to help our partners achieve the right feel, color, performance and finish.</p>
+          <a class="text-link" href="about.html">Discover who we are <i class="fa-solid fa-arrow-right"></i></a>
         </div>
-<button aria-label="Close" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" type="button"></button>
-</div>
-</div>
-</div>
-<div class="top-bar py-2 d-none d-xl-block">
-<div class="container d-flex justify-content-between align-items-center">
-<div class="d-flex gap-4">
-<span><i class="pulse-dot me-1"></i> Quesna factory operating at full capacity: Industrial Zone, Menoufia</span>
-<span><i class="fa-solid fa-envelope text-warning me-1"></i> egypt@pielcolor.com</span>
-<span><i class="fa-solid fa-phone text-warning me-1"></i> +20 (048) 2590-123</span>
-</div>
-<div class="d-flex gap-3 align-items-center">
-<span class="badge bg-danger">Egypt / Spain</span>
-<a href="#"><i class="fa-brands fa-linkedin"></i></a>
-<a href="#"><i class="fa-brands fa-facebook"></i></a>
-<a href="#"><i class="fa-solid fa-globe"></i> Global Website</a>
-</div>
-</div>
-</div>
-<div aria-hidden="true" class="modal fade" id="imageModal" tabindex="-1">
-<div class="modal-dialog modal-dialog-centered modal-lg">
-<div class="modal-content bg-dark text-white">
-<div class="modal-header border-secondary">
-<h5 class="modal-title fw-bold" id="imageModalTitle">Image Details</h5>
-<button aria-label="Close" class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
-</div>
-<div class="modal-body p-0 text-center">
-<img alt="Enlarged view" class="img-fluid w-100 style-modal-img" id="imageModalSrc" src=""/>
-<div class="p-3 bg-secondary bg-opacity-25 text-start">
-<p class="mb-0 text-light opacity-90" id="imageModalDesc">Description goes here...</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div aria-hidden="true" class="modal fade" id="tdsModal" tabindex="-1">
-<div class="modal-dialog modal-dialog-centered">
-<div class="modal-content">
-<div class="modal-header bg-dark text-white">
-<h5 class="modal-header-title fw-bold" id="tdsTitle">Product Technical Data Sheet</h5>
-<button aria-label="Close" class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
-</div>
-<div class="modal-body p-4">
-<div class="mb-3">
-<span class="badge bg-danger" id="tdsCategory">Chemical Category</span>
-</div>
-<p class="text-muted" id="tdsDescription">Technical product details and applications...</p>
-<hr/>
-<h6>Standard Specifications:</h6>
-<ul class="small text-muted">
-<li>Organic content: Aligned with ZDHC requirements</li>
-<li>pH level: Balanced for leather processing</li>
-<li>Storage: Keep in a dry place away from direct sunlight</li>
-</ul>
-</div>
-<div class="modal-footer">
-<button class="btn btn-secondary" data-bs-dismiss="modal" type="button">Close</button>
-<button class="btn btn-leather-accent" onclick="showToast('Downloading TDS PDF...')" type="button">Download PDF Catalog</button>
-</div>
-</div>
-</div>
-</div>
-<div class="certificate-lightbox" id="certificateLightbox">
-<button aria-label="Close" class="lightbox-close" onclick="closeCertificate()" type="button">
-<i class="fa-solid fa-xmark"></i>
-</button>
-<img alt="Certificate" id="lightboxCertificateImage" src=""/>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>
-    // Initialize AOS Animations
-    document.addEventListener('DOMContentLoaded', function() {
-      AOS.init({
-        duration: 800,
-        once: true,
-        easing: 'ease-out-quad'
-      });
-      animateCounters();
-    });
+        <div class="intro-visual">
+          <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1200&q=85" alt="Leather craftsmanship and material detail">
+          <div class="image-caption">Made for makers. Built to perform.</div>
+        </div>
+      </div>
+    </section>
 
-    // SPA Section Navigation System with Smooth Fade
-    function navigateTo(pageId) {
-      const sections = document.querySelectorAll('.page-section');
-      sections.forEach(sec => sec.classList.remove('active'));
+    <section class="collections">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Our expertise</div>
+          <h2>Solutions for every stage of leather making.</h2>
+          <p>From preparation to the final surface, our technologies are designed to enhance the natural character and performance of leather.</p>
+        </div>
+        <div class="collection-grid">
+          <article class="collection-card">
+            <img src="Images/Factory/AHM_9624.jpg" alt="Leather production materials">
+            <div class="collection-info"><span>01 · Wet end</span><h3>Preparation & tanning</h3><p>Retanning agents, fatliquors and enzymes for flexibility, fullness and stability.</p><a href="Our-products.html">Explore range &nbsp; ↗</a></div>
+          </article>
+          <article class="collection-card">
+            <img src="Images/Factory/AHM_9638.jpg" alt="Rich leather colors">
+            <div class="collection-info"><span>02 · Color</span><h3>Dyes & pigments</h3><p>Expressive shades and reliable color performance for distinctive leather.</p><a href="Our-products.html">Explore range &nbsp; ↗</a></div>
+          </article>
+          <article class="collection-card">
+            <img src="Images/Factory/AHM_9640.jpg" alt="Leather fashion and texture">
+            <div class="collection-info"><span>03 · Finishing</span><h3>Top coats & finishes</h3><p>Protective finishes with precise control over touch, gloss and durability.</p><a href="Our-products.html">Explore range &nbsp; ↗</a></div>
+          </article>
+          <article class="collection-card">
+            <img src="Images/Factory/AHM_9641.jpg" alt="Natural materials and sustainability">
+            <div class="collection-info"><span>04 · Responsibility</span><h3>Sustainable solutions</h3><p>Responsible innovation focused on safer processes and better performance.</p><a href="sustainability.html">Discover more &nbsp; ↗</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-      const navLinks = document.querySelectorAll('.nav-link');
-      navLinks.forEach(link => link.classList.remove('active-page'));
+    <section class="statement">
+      <div class="container">
+        <div class="eyebrow">Our philosophy</div>
+        <h2>We believe great leather is not simply made. It is carefully <em>engineered.</em></h2>
+        <p>Every formula, every shade and every finish is an opportunity to create something better — combining technical precision with the beauty of the material.</p>
+      </div>
+    </section>
 
-      const targetSection = document.getElementById('page-' + pageId);
-      if (targetSection) {
-        targetSection.classList.add('active');
-        // Refresh AOS animations for newly displayed page
-        setTimeout(() => { AOS.refresh(); }, 100);
-      }
+    <section class="process">
+      <div class="container process-grid">
+        <div class="process-photo"><img src="Images/Products/arizona havan.JPG" alt="Craft and production process"></div>
+        <div class="process-copy">
+          <div class="eyebrow">From knowledge to performance</div>
+          <h2>Technical expertise. Real-world results.</h2>
+          <p>Our work starts by understanding the material, the process and the result our customers want to achieve. We bring together product development and technical support to help turn that goal into a consistent finish.</p>
+          <div class="process-steps">
+            <div class="step"><b>01</b><div><h4>Understand the material</h4><p>We study the leather type, application and required performance.</p></div></div>
+            <div class="step"><b>02</b><div><h4>Develop the right solution</h4><p>We match chemistry, color and finishing technologies to the project.</p></div></div>
+            <div class="step"><b>03</b><div><h4>Support every step</h4><p>Our team works alongside customers to achieve reliable results.</p></div></div>
+          </div>
+          <a class="text-link" href="support.html">Explore our technical support <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
 
-      const targetNav = document.getElementById('nav-' + pageId);
-      if (targetNav) {
-        targetNav.classList.add('active-page');
-      }
+    <section class="numbers">
+      <div class="container numbers-grid">
+        <div class="number"><strong>40+</strong><span>Years of global innovation</span></div>
+        <div class="number"><strong>600+</strong><span>Specialty chemical products</span></div>
+        <div class="number"><strong>Quesna</strong><span>Integrated factory · Egypt</span></div>
+        <div class="number"><strong>100%</strong><span>Commitment to quality</span></div>
+      </div>
+    </section>
 
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    <section class="sustain">
+      <div class="container sustain-grid">
+        <div class="sustain-photo"><img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1200&q=85" alt="Nature and sustainable environment"></div>
+        <div class="sustain-copy">
+          <div class="eyebrow">A more responsible future</div>
+          <h2>Progress that respects the world around us.</h2>
+          <p>We believe innovation should move hand in hand with responsibility. Our commitment is to keep improving our products and processes while supporting customers in meeting evolving quality and environmental expectations.</p>
+          <a class="text-link" href="sustainability.html">Our sustainability approach <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
 
-      const navbarCollapse = document.getElementById('pielNavbar');
-      if (navbarCollapse.classList.contains('show')) {
-        const bsCollapse = new bootstrap.Collapse(navbarCollapse);
-        bsCollapse.hide();
-      }
-    }
+    <section class="cta">
+      <div class="container">
+        <div class="eyebrow" style="justify-content:center">Let's create something exceptional</div>
+        <h2>Have a leather project in mind?</h2>
+        <p>Tell us what you are working on. Our team is ready to help you find the right solution.</p>
+        <a class="btn btn-dark" href="contact.html">Talk to our team <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </section>
+  </main>
 
-    // Quick Preview Swatch Update
-    function updateQuickPreview(colorHex, label) {
-      const previewBox = document.getElementById('quickPreviewBox');
-      const labelBox = document.getElementById('quickPreviewLabel');
-      previewBox.style.backgroundColor = colorHex;
-      labelBox.innerText = label;
-    }
-
-    // Filter Products Catalog
-    function filterProducts(category, btnElement) {
-      const buttons = document.querySelectorAll('#page-products .filter-btn');
-      buttons.forEach(b => b.classList.remove('active'));
-      btnElement.classList.add('active');
-
-      const items = document.querySelectorAll('.product-item');
-      items.forEach(item => {
-        if (category === 'all' || item.classList.contains(category)) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
-        }
-      });
-    }
-
-    // Filter Factory Gallery Items
-    function filterGallery(category, btnElement) {
-      const buttons = document.querySelectorAll('#page-gallery .filter-btn');
-      buttons.forEach(b => b.classList.remove('active'));
-      btnElement.classList.add('active');
-
-      const items = document.querySelectorAll('.gallery-item');
-      items.forEach(item => {
-        if (category === 'all' || item.classList.contains(category)) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
-        }
-      });
-    }
-
-    // Open Factory Image Modal (Lightbox)
-    function openImageModal(imgUrl, title, desc) {
-      document.getElementById('imageModalTitle').innerText = title;
-      document.getElementById('imageModalSrc').src = imgUrl;
-      document.getElementById('imageModalDesc').innerText = desc;
-      
-      const modal = new bootstrap.Modal(document.getElementById('imageModal'));
-      modal.show();
-    }
-
-    // Open TDS Modal
-    function openTdsModal(title, category, description) {
-      document.getElementById('tdsTitle').innerText = 'Product Technical Data Sheet (TDS): ' + title;
-      document.getElementById('tdsCategory').innerText = category;
-      document.getElementById('tdsDescription').innerText = description;
-      
-      const modal = new bootstrap.Modal(document.getElementById('tdsModal'));
-      modal.show();
-    }
-
-
-
-    function selectColor(element) {
-      document.querySelectorAll('#colorSwatches .swatch-btn').forEach(btn => btn.classList.remove('active'));
-      element.classList.add('active');
-      
-      currentSelectedColorHex = element.getAttribute('data-color');
-      currentSelectedColorName = element.getAttribute('data-color-name');
-      document.getElementById('selectedColorName').innerText = currentSelectedColorName;
-
-      updateVisualizer();
-    }
-
-    function updateVisualizer() {
-      const appSelect = document.getElementById('appSelect');
-      const appText = appSelect.options[appSelect.selectedIndex].text;
-      
-      const finishType = document.querySelector('input[name="finishType"]:checked').value;
-      
-      const mainBox = document.getElementById('mainVisualizerBox');
-      const overlay = document.getElementById('visualizerOverlay');
-      const tag = document.getElementById('previewTag');
-      const titleDisplay = document.getElementById('visualizerTitleDisplay');
-      const descDisplay = document.getElementById('visualizerDescDisplay');
-      const recipeList = document.getElementById('recommendedRecipe');
-
-      mainBox.style.backgroundColor = currentSelectedColorHex;
-
-      if (finishType === 'matte') {
-        overlay.style.background = 'linear-gradient(135deg, rgba(0,0,0,0.2), rgba(0,0,0,0.5))';
-        tag.innerText = appText + ' - Matte';
-        descDisplay.innerText = 'Treated with AQUADERM MATT to create a smooth, velvety leather surface with fingerprint resistance.';
-        recipeList.innerHTML = `
-          <li>Dye: PIELCOLOR DYE HIGH-PENETRATION</li>
-          <li>Topcoat: AQUADERM MATT COAT 50</li>
-          <li>Note: Excellent abrasion protection.</li>
-        `;
-      } else if (finishType === 'satin') {
-        overlay.style.background = 'linear-gradient(135deg, rgba(255,255,255,0.15), rgba(0,0,0,0.3))';
-        tag.innerText = appText + ' - Natural Satin';
-        descDisplay.innerText = 'Treated with SATIN-FINISH B-20 to provide a refined natural feel with a soft light reflection.';
-        recipeList.innerHTML = `
-          <li>Dye: PIELCOLOR ANILINE DYE</li>
-          <li>Topcoat: SATIN-FINISH B-20</li>
-          <li>Note: A natural, organic appearance for premium leather.</li>
-        `;
-      } else if (finishType === 'gloss') {
-        overlay.style.background = 'linear-gradient(135deg, rgba(255,255,255,0.45), rgba(0,0,0,0.1))';
-        tag.innerText = appText + ' - High Gloss';
-        descDisplay.innerText = 'Treated with HIGH-GLOSS POLYURETHANE to deliver a crystal-like shine for footwear and handbags.';
-        recipeList.innerHTML = `
-          <li>Dye: PIELCOLOR HIGH-COVER PIGMENT</li>
-          <li>Topcoat: PIEL-GLOSS FINISH HIGH</li>
-          <li>Note: Exceptional gloss without cracking.</li>
-        `;
-      }
-
-      titleDisplay.innerText = 'Leather ' + appText.split(' ')[0] + ' - ' + currentSelectedColorName;
-    }
-
-    // Counter Animation Logic for Stats Banner
-    function animateCounters() {
-      const counters = document.querySelectorAll('.stats-number[data-target]');
-      counters.forEach(counter => {
-        const target = +counter.getAttribute('data-target');
-        let count = 0;
-        const speed = target / 50;
-        const updateCount = () => {
-          count += speed;
-          if (count < target) {
-            counter.innerText = '+' + Math.ceil(count);
-            setTimeout(updateCount, 30);
-          } else {
-            counter.innerText = '+' + target;
-          }
-        };
-        updateCount();
-      });
-    }
-
-    // Form Submission Handler
-    function handleFormSubmit(e) {
-      e.preventDefault();
-      showToast('Thank you for contacting us! Your request has been successfully sent to the Quesna factory technical support team. We will contact you soon.');
-      document.getElementById('contactForm').reset();
-    }
-
-    // Show Toast Notification
-    function showToast(message) {
-      document.getElementById('toastMessage').innerText = message;
-      const toastEl = document.getElementById('liveToast');
-      const toast = new bootstrap.Toast(toastEl);
-      toast.show();
-    }
-
-    function openCertificate(button) {
-    const image = button.closest('.certificate-image').querySelector('img');
-
-    const lightbox = document.getElementById('certificateLightbox');
-    const lightboxImage = document.getElementById('lightboxCertificateImage');
-
-    lightboxImage.src = image.src;
-    lightboxImage.alt = image.alt;
-
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
-
-function closeCertificate() {
-    const lightbox = document.getElementById('certificateLightbox');
-
-    lightbox.classList.remove('active');
-    document.body.style.overflow = '';
-}
-
-// Close when clicking outside the image
-document.getElementById('certificateLightbox').addEventListener('click', function (e) {
-    if (e.target === this) {
-        closeCertificate();
-    }
-});
-
-// Close using ESC key
-document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') {
-        closeCertificate();
-    }
-});
-  </script>
-<nav class="navbar navbar-expand-xl navbar-piel sticky-top py-3">
-<div class="container-fluid">
-<a class="navbar-brand d-flex align-items-center " style="gap:2px" href="index.html">
-<div class="brand-icon">
-<img src="Images/logo-lrg.png" style="width: 55px; height: auto;"/>
-</div>
-<div class="brand-text">
-<div class="brand-title">PIEL COLOR</div>
-<div class="brand-subtitle">CHEMICALS &amp; LEATHER FINISHING</div>
-</div>
-</a>
-<button class="navbar-toggler border-0" data-bs-target="#pielNavbar" data-bs-toggle="collapse" type="button">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="pielNavbar">
-<ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-1">
-<li class="nav-item">
-<a class="nav-link active-page" href="index.html" id="nav-home"  >Home</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="about.html" id="nav-about" >About Us</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="Our-products.html" id="nav-products" >Products</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="gallery.html" id="nav-gallery" >Factory</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="sustainability.html" id="nav-sustainability" >Sustainability</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="support.html" id="nav-support" >Technical Support</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="contact.html" id="nav-contact" >Contact</a>
-</li>
-</ul>
-<div>
-<a class="btn btn-leather-primary text-nowrap" href="contact.html" >
-<i class="fa-solid fa-paper-plane me-1"></i> Request Samples
-</a>
-</div>
-</div>
-</div>
-</nav>
-<div class="page-section" id="page-home">
-<!-- Hero Banner -->
-<section class="hero-banner">
-<div class="container">
-<div class="row align-items-center g-5">
-<div class="col-lg-7" data-aos="fade-left" data-aos-duration="1000">
-<span class="hero-badge">
-<i class="fa-solid fa-award me-1"></i> Spanish Expertise, Egyptian Solutions
-            </span>
-<h1 class="display-5 fw-extrabold mb-4 lh-base">
-              Advanced Innovation in <span style="color: #F8D8B6; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">Leather Tanning &amp; Finishing</span>
-</h1>
-<p class="lead text-light mb-4 opacity-90" style="font-size: 15px;">
-              We develop and manufacture high-performance specialty chemicals, dyes, and finishing systems that give leather exceptional durability, a natural feel, and rich colors that meet the highest standards for fashion, furniture, and automotive applications.
-            </p>
-<div class="d-flex flex-wrap gap-3 pt-2">
-<!--<button class="btn btn-leather-accent btn-lg" onclick="window.location.href='visualizer.html'">
-                <i class="fa-solid fa-wand-magic-sparkles me-2"></i>Explore the Color & Effects Lab
-              </button>-->
-<button class="btn btn-outline-light btn-lg rounded-3 border-2" onclick="window.location.href='gallery.html'">
-<i class="fa-solid fa-industry me-2"></i>Explore Our Quesna Factory
-              </button>
-</div>
-</div>
-<div class="col-lg-5" data-aos="fade-right" data-aos-duration="1000">
-<div class="visualizer-card p-4 text-center">
-<div class="d-flex justify-content-between align-items-center mb-3">
-<span class="fw-bold text-dark"><i class="fa-solid fa-microscope text-danger me-1"></i> Quick Finish Preview</span>
-<span class="badge bg-secondary">Piel Visual Lab</span>
-</div>
-<div class="visualizer-preview-box mb-3" id="quickPreviewBox" style="background-image: url('Images/Pio-Laser-10.jpeg');">
-<div class="badge bg-dark bg-opacity-75 p-2 rounded-3 text-white" id="quickPreviewLabel">Classic Brown Leather - Matte</div>
-</div>
-<p class="small text-muted mb-3">Choose a color shade to preview leather treated with our products:</p>
-<div class="d-flex justify-content-center gap-3">
-<div class="swatch-btn active" onclick="updateQuickPreview('#3B1E13', 'Dark Espresso')" style="background: #3B1E13;" title="Dark Espresso"></div>
-<div class="swatch-btn" onclick="updateQuickPreview('#A65B28', 'Camel Tan')" style="background: #A65B28;" title="Camel Tan"></div>
-<div class="swatch-btn" onclick="updateQuickPreview('#1B2631', 'Premium Carbon Black')" style="background: #1B2631;" title="Premium Carbon Black"></div>
-<div class="swatch-btn" onclick="updateQuickPreview('#7B241C', 'Luxury Burgundy')" style="background: #7B241C;" title="Luxury Burgundy"></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Core Specializations -->
-<section class="py-5">
-<div class="container py-4">
-<div class="text-center max-w-700 mx-auto mb-5" data-aos="fade-up">
-<span class="text-uppercase fw-bold text-danger">Our Expertise &amp; Tanning Processes</span>
-<h2 class="fw-bold display-6 text-dark mt-2">Complete Chemical Solutions from Raw Hide to Finished Leather</h2>
-<p class="text-muted fs-6">Piel Color provides integrated solutions for every stage of leather manufacturing, with a focus on environmental safety and European standards.</p>
-</div>
-<div class="row g-4">
-<div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-<div class="custom-card">
-<div class="card-icon">
-<i class="fa-solid fa-flask-vial"></i>
-</div>
-<h4 class="fw-bold mb-3">Preparation &amp; Tanning (Wet End)</h4>
-<p class="text-muted leading-relaxed">
-                Retanning agents, fatliquors, and enzymes that provide leather with flexibility, fullness, structural strength, and dimensional stability.
-              </p>
-<a class="fw-bold text-decoration-none" href="#" onclick="window.location.href='products.html'" style="color: var(--leather-mahogany);">
-                Explore Wet End Products <i class="fa-solid fa-arrow-right ms-1"></i>
-</a>
-</div>
-</div>
-<div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-<div class="custom-card">
-<div class="card-icon" style="background: rgba(107, 45, 27, 0.12); color: var(--leather-tan);">
-<i class="fa-solid fa-palette"></i>
-</div>
-<h4 class="fw-bold mb-3">Dyes &amp; Pigments</h4>
-<p class="text-muted leading-relaxed">
-                High-purity dye and pigment systems that ensure color fastness against light, friction, and heat while enhancing the natural beauty of the leather grain.
-              </p>
-<a class="fw-bold text-decoration-none" href="#" onclick="window.location.href='products.html'" style="color: var(--leather-tan);">
-                Explore Color Shades <i class="fa-solid fa-arrow-right ms-1"></i>
-</a>
-</div>
-</div>
-<div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-<div class="custom-card">
-<div class="card-icon" style="background: rgba(15, 27, 41, 0.1); color: var(--navy-dark);">
-<i class="fa-solid fa-shield-halved"></i>
-</div>
-<h4 class="fw-bold mb-3">Top Coats &amp; Protective Finishes</h4>
-<p class="text-muted leading-relaxed">
-                Final protective layers with water and scratch resistance, offering full control over gloss levels—from matte and satin to high gloss.
-              </p>
-<a class="fw-bold text-decoration-none" href="#" onclick="window.location.href='products.html'" style="color: var(--navy-dark);">
-                Explore Finishing Solutions <i class="fa-solid fa-arrow-right ms-1"></i>
-</a>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Stats Section -->
-<section class="container my-5" data-aos="zoom-in">
-<div class="stats-section shadow-lg">
-<div class="row text-center g-4">
-<div class="col-md-3 col-6">
-<div class="stats-number" data-target="40">+0</div>
-<div class="text-light fw-semibold">Years of Global Innovation</div>
-</div>
-<div class="col-md-3 col-6">
-<div class="stats-number" data-target="600">+0</div>
-<div class="text-light fw-semibold">Specialty Chemical Products</div>
-</div>
-<div class="col-md-3 col-6">
-<div class="stats-number">Quesna</div>
-<div class="text-light fw-semibold">Integrated Factory in Egypt</div>
-</div>
-<div class="col-md-3 col-6">
-<div class="stats-number">100%</div>
-<div class="text-light fw-semibold">Aligned with ZDHC &amp; Environmental Standards</div>
-</div>
-</div>
-</div>
-</section>
-</div>
-<footer>
-<div class="container">
-<div class="row g-4 mb-5">
-<div class="col-lg-4">
-<div class="d-flex align-items-center gap-2 mb-3">
-<div class="brand-icon">
-<img src="Images/logo-lrg.png" style="width: 55px; height: auto;"/>
-</div>
-<span class="fs-4 fw-bold text-white">PIEL COLOR</span>
-</div>
-<p class="small leading-relaxed mb-3">
-            A global innovator and manufacturer of chemicals, dyes, and leather finishing systems. Decades of quality, supported by our branch and factory in Quesna, Egypt.
-          </p>
-<div class="d-flex gap-3 fs-5">
-<a href="#"><i class="fa-brands fa-facebook"></i></a>
-<a href="#"><i class="fa-brands fa-linkedin"></i></a>
-<a href="#"><i class="fa-brands fa-instagram"></i></a>
-</div>
-</div>
-<div class="col-lg-2 col-6">
-<h5>Quick Links</h5>
-<ul class="list-unstyled d-flex flex-column gap-2 small">
-<li><a href="#" onclick="navigateTo('home')">Home</a></li>
-<li><a href="#" onclick="navigateTo('about')">About Us</a></li>
-<li><a href="#" onclick="navigateTo('products')">Products &amp; Solutions</a></li>
-<li><a href="#" onclick="navigateTo('gallery')">Factory Gallery</a></li>
-</ul>
-</div>
-<div class="col-lg-3 col-6">
-<h5>Expertise &amp; Solutions</h5>
-<ul class="list-unstyled d-flex flex-column gap-2 small">
-<li><a href="#" onclick="navigateTo('products')">Wet End Retanning Agents</a></li>
-<li><a href="#" onclick="navigateTo('products')">Aniline Dyes &amp; Pigments</a></li>
-<li><a href="#" onclick="navigateTo('products')">Matte &amp; Gloss Topcoats</a></li>
-<li><a href="#" onclick="navigateTo('sustainability')">Sustainable Green Tanning</a></li>
-</ul>
-</div>
-<div class="col-lg-3">
-<h5>Quesna Factory</h5>
-<p class="small text-light opacity-75">
-            Industrial Zone, Kafr El-Raml, Quesna, Menoufia, Egypt.<br/>
-            Phone: +20 48 2590509<br/>
-            Email: Info@pielcolorsae.com
-          </p>
-</div>
-</div>
-<hr class="border-secondary"/>
-<div class="d-flex flex-column flex-md-row justify-content-between align-items-center small pt-3">
-<div>All Rights Reserved © 2026 PIEL COLOR SAE - Professional Design &amp; Development.</div>
-<div class="d-flex gap-3 mt-2 mt-md-0">
-<a href="#">Privacy Policy</a>
-<a href="#">Terms &amp; Conditions</a>
-</div>
-</div>
-</div>
-</footer>
-<div class="certificate-lightbox" id="certificateLightbox">
-<button aria-label="Close" class="lightbox-close" onclick="closeCertificate()" type="button">
-<i class="fa-solid fa-xmark"></i>
-</button>
-<img alt="Certificate" id="lightboxCertificateImage" src=""/>
-</div><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script><script>
-    // Initialize AOS Animations
-    document.addEventListener('DOMContentLoaded', function() {
-      AOS.init({
-        duration: 800,
-        once: true,
-        easing: 'ease-out-quad'
-      });
-      animateCounters();
-    });
-
-    // Multi-page navigation: each section now has its own HTML document.
-    function navigateTo(pageId) {
-      const routes = {'home': 'index.html', 'about': 'about.html', 'products': 'products.html', 'visualizer': 'visualizer.html', 'gallery': 'gallery.html', 'sustainability': 'sustainability.html', 'support': 'support.html', 'contact': 'contact.html'};
-      if (routes[pageId]) window.location.href = routes[pageId];
-    }
-
-    // Quick Preview Swatch Update
-    function updateQuickPreview(colorHex, label) {
-      const previewBox = document.getElementById('quickPreviewBox');
-      const labelBox = document.getElementById('quickPreviewLabel');
-      previewBox.style.backgroundColor = colorHex;
-      labelBox.innerText = label;
-    }
-
-    // Filter Products Catalog
-    function filterProducts(category, btnElement) {
-      const buttons = document.querySelectorAll('#page-products .filter-btn');
-      buttons.forEach(b => b.classList.remove('active'));
-      btnElement.classList.add('active');
-
-      const items = document.querySelectorAll('.product-item');
-      items.forEach(item => {
-        if (category === 'all' || item.classList.contains(category)) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
-        }
-      });
-    }
-
-    // Filter Factory Gallery Items
-    function filterGallery(category, btnElement) {
-      const buttons = document.querySelectorAll('#page-gallery .filter-btn');
-      buttons.forEach(b => b.classList.remove('active'));
-      btnElement.classList.add('active');
-
-      const items = document.querySelectorAll('.gallery-item');
-      items.forEach(item => {
-        if (category === 'all' || item.classList.contains(category)) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
-        }
-      });
-    }
-
-    // Open Factory Image Modal (Lightbox)
-    function openImageModal(imgUrl, title, desc) {
-      document.getElementById('imageModalTitle').innerText = title;
-      document.getElementById('imageModalSrc').src = imgUrl;
-      document.getElementById('imageModalDesc').innerText = desc;
-      
-      const modal = new bootstrap.Modal(document.getElementById('imageModal'));
-      modal.show();
-    }
-
-    // Open TDS Modal
-    function openTdsModal(title, category, description) {
-      document.getElementById('tdsTitle').innerText = 'Product Technical Data Sheet (TDS): ' + title;
-      document.getElementById('tdsCategory').innerText = category;
-      document.getElementById('tdsDescription').innerText = description;
-      
-      const modal = new bootstrap.Modal(document.getElementById('tdsModal'));
-      modal.show();
-    }
-
-    // Leather Visualizer Lab Logic
-    let currentSelectedColorHex = '#4A2311';
-    let currentSelectedColorName = 'Dark Chocolate Brown';
-
-    function selectColor(element) {
-      document.querySelectorAll('#colorSwatches .swatch-btn').forEach(btn => btn.classList.remove('active'));
-      element.classList.add('active');
-      
-      currentSelectedColorHex = element.getAttribute('data-color');
-      currentSelectedColorName = element.getAttribute('data-color-name');
-      document.getElementById('selectedColorName').innerText = currentSelectedColorName;
-
-      updateVisualizer();
-    }
-
-    function updateVisualizer() {
-      const appSelect = document.getElementById('appSelect');
-      const appText = appSelect.options[appSelect.selectedIndex].text;
-      
-      const finishType = document.querySelector('input[name="finishType"]:checked').value;
-      
-      const mainBox = document.getElementById('mainVisualizerBox');
-      const overlay = document.getElementById('visualizerOverlay');
-      const tag = document.getElementById('previewTag');
-      const titleDisplay = document.getElementById('visualizerTitleDisplay');
-      const descDisplay = document.getElementById('visualizerDescDisplay');
-      const recipeList = document.getElementById('recommendedRecipe');
-
-      mainBox.style.backgroundColor = currentSelectedColorHex;
-
-      if (finishType === 'matte') {
-        overlay.style.background = 'linear-gradient(135deg, rgba(0,0,0,0.2), rgba(0,0,0,0.5))';
-        tag.innerText = appText + ' - Matte';
-        descDisplay.innerText = 'Treated with AQUADERM MATT to create a smooth, velvety leather surface with fingerprint resistance.';
-        recipeList.innerHTML = `
-          <li>Dye: PIELCOLOR DYE HIGH-PENETRATION</li>
-          <li>Topcoat: AQUADERM MATT COAT 50</li>
-          <li>Note: Excellent abrasion protection.</li>
-        `;
-      } else if (finishType === 'satin') {
-        overlay.style.background = 'linear-gradient(135deg, rgba(255,255,255,0.15), rgba(0,0,0,0.3))';
-        tag.innerText = appText + ' - Natural Satin';
-        descDisplay.innerText = 'Treated with SATIN-FINISH B-20 to provide a refined natural feel with a soft light reflection.';
-        recipeList.innerHTML = `
-          <li>Dye: PIELCOLOR ANILINE DYE</li>
-          <li>Topcoat: SATIN-FINISH B-20</li>
-          <li>Note: A natural, organic appearance for premium leather.</li>
-        `;
-      } else if (finishType === 'gloss') {
-        overlay.style.background = 'linear-gradient(135deg, rgba(255,255,255,0.45), rgba(0,0,0,0.1))';
-        tag.innerText = appText + ' - High Gloss';
-        descDisplay.innerText = 'Treated with HIGH-GLOSS POLYURETHANE to deliver a crystal-like shine for footwear and handbags.';
-        recipeList.innerHTML = `
-          <li>Dye: PIELCOLOR HIGH-COVER PIGMENT</li>
-          <li>Topcoat: PIEL-GLOSS FINISH HIGH</li>
-          <li>Note: Exceptional gloss without cracking.</li>
-        `;
-      }
-
-      titleDisplay.innerText = 'Leather ' + appText.split(' ')[0] + ' - ' + currentSelectedColorName;
-    }
-
-    // Counter Animation Logic for Stats Banner
-    function animateCounters() {
-      const counters = document.querySelectorAll('.stats-number[data-target]');
-      counters.forEach(counter => {
-        const target = +counter.getAttribute('data-target');
-        let count = 0;
-        const speed = target / 50;
-        const updateCount = () => {
-          count += speed;
-          if (count < target) {
-            counter.innerText = '+' + Math.ceil(count);
-            setTimeout(updateCount, 30);
-          } else {
-            counter.innerText = '+' + target;
-          }
-        };
-        updateCount();
-      });
-    }
-
-    // Form Submission Handler
-    function handleFormSubmit(e) {
-      e.preventDefault();
-      showToast('Thank you for contacting us! Your request has been successfully sent to the Quesna factory technical support team. We will contact you soon.');
-      document.getElementById('contactForm').reset();
-    }
-
-    // Show Toast Notification
-    function showToast(message) {
-      const messageEl = document.getElementById('toastMessage');
-      if (!messageEl) return;
-      messageEl.innerText = message;
-      const toastEl = document.getElementById('liveToast');
-      const toast = new bootstrap.Toast(toastEl);
-      toast.show();
-    }
-
-    function openCertificate(button) {
-    const image = button.closest('.certificate-image').querySelector('img');
-
-    const lightbox = document.getElementById('certificateLightbox');
-    const lightboxImage = document.getElementById('lightboxCertificateImage');
-
-    lightboxImage.src = image.src;
-    lightboxImage.alt = image.alt;
-
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
-
-function closeCertificate() {
-    const lightbox = document.getElementById('certificateLightbox');
-
-    lightbox.classList.remove('active');
-    document.body.style.overflow = '';
-}
-
-// Close when clicking outside the image
-document.getElementById('certificateLightbox')?.addEventListener('click', function (e) {
-    if (e.target === this) {
-        closeCertificate();
-    }
-});
-
-// Close using ESC key
-document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') {
-        closeCertificate();
-    }
-});
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div><div class="footer-brand">PIEL COLOR</div><p class="footer-text">Specialty chemicals, dyes and leather finishing systems. Technical knowledge and innovation supporting the leather industry from Quesna, Egypt.</p><div class="social"><a href="#"><i class="fa-brands fa-linkedin-in"></i></a><a href="#"><i class="fa-brands fa-facebook-f"></i></a><a href="#"><i class="fa-brands fa-instagram"></i></a></div></div>
+        <div><h4>Explore</h4><ul><li><a href="about.html">About us</a></li><li><a href="Our-products.html">Products</a></li><li><a href="gallery.html">Factory</a></li><li><a href="sustainability.html">Sustainability</a></li></ul></div>
+        <div><h4>Our solutions</h4><ul><li><a href="Our-products.html">Wet end chemicals</a></li><li><a href="Our-products.html">Dyes & pigments</a></li><li><a href="Our-products.html">Top coats & finishes</a></li><li><a href="support.html">Technical support</a></li></ul></div>
+        <div><h4>Get in touch</h4><ul><li>Industrial Zone, Kafr El-Raml</li><li>Quesna, Menoufia, Egypt</li><li>+20 48 2590509</li><li><a href="mailto:Info@pielcolorsae.com">Info@pielcolorsae.com</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 PIEL COLOR SAE. All rights reserved.</span><span>Crafted with knowledge. Finished with care.</span></div>
+    </div>
+  </footer>
+  <script>
+    const toggle=document.getElementById('menuToggle');
+    const nav=document.getElementById('mainNav');
+    toggle.addEventListener('click',()=>{nav.classList.toggle('open');toggle.innerHTML=nav.classList.contains('open')?'<i class="fa-solid fa-xmark"></i>':'<i class="fa-solid fa-bars"></i>';});
+    nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>nav.classList.remove('open')));
   </script>
 </body>
 </html>
