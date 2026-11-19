@@ -1,0 +1,451 @@
+
+        :root {
+            --sustain-brown: #6B2D1B;
+            --sustain-tan: #C88242;
+            --sustain-light: #EEDCC8;
+            --sustain-navy: #0F1B29;
+            --sustain-cream: #FDFBF7;
+            --sustain-text: #252A30;
+            --sustain-muted: #68717C;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--sustain-cream);
+            color: var(--sustain-text);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* ================= HERO ================= */
+
+        .sustain-hero {
+            min-height: 470px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(100deg, rgba(15, 27, 41, .94), rgba(107, 45, 27, .78)),
+                url('Images/Pio-Laser-10.jpeg') center/cover no-repeat;
+            overflow: hidden;
+        }
+
+        .sustain-hero::after {
+            content: "";
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 50%;
+            right: -120px;
+            bottom: -230px;
+        }
+
+        .sustain-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 780px;
+            padding: 100px 0;
+            color: #fff;
+        }
+
+        .sustain-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 9px 17px;
+            border: 1px solid rgba(238,220,200,.45);
+            border-radius: 50px;
+            background: rgba(200,130,66,.16);
+            color: #F2D5B6;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+
+        .sustain-eyebrow i {
+            color: #D6A36D;
+        }
+
+        .sustain-hero h1 {
+            font-size: clamp(38px, 5vw, 62px);
+            line-height: 1.15;
+            font-weight: 700;
+            margin-bottom: 22px;
+        }
+
+        .sustain-hero h1 span {
+            color: #D9A36B;
+        }
+
+        .sustain-hero p {
+            color: rgba(255,255,255,.82);
+            font-size: 17px;
+            line-height: 1.9;
+            max-width: 680px;
+            margin-bottom: 30px;
+        }
+
+        .sustain-hero-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 25px;
+            border-radius: 8px;
+            background: var(--sustain-tan);
+            color: #fff;
+            font-weight: 700;
+            transition: .3s ease;
+        }
+
+        .sustain-hero-btn:hover {
+            background: #A96328;
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        /* ================= GENERAL ================= */
+
+        .sustain-section {
+            padding: 90px 0;
+        }
+
+        .sustain-section-label {
+            display: inline-block;
+            color: var(--sustain-brown);
+            background: rgba(200,130,66,.12);
+            border-radius: 50px;
+            padding: 8px 16px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.2px;
+            margin-bottom: 17px;
+            text-transform: uppercase;
+        }
+
+        .sustain-heading {
+            font-size: clamp(30px, 4vw, 43px);
+            line-height: 1.25;
+            color: var(--sustain-navy);
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .sustain-description {
+            color: var(--sustain-muted);
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        /* ================= INTRO ================= */
+
+        .sustain-intro {
+            background: var(--sustain-cream);
+        }
+
+        .sustain-intro-visual {
+            position: relative;
+            min-height: 420px;
+        }
+
+        .sustain-intro-image {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 18px;
+            box-shadow: 0 20px 45px rgba(15,27,41,.12);
+        }
+
+        .sustain-image-caption {
+            position: absolute;
+            left: -25px;
+            bottom: 25px;
+            max-width: 240px;
+            padding: 20px;
+            border-radius: 12px;
+            background: var(--sustain-navy);
+            color: #fff;
+            box-shadow: 0 12px 30px rgba(15,27,41,.2);
+        }
+
+        .sustain-image-caption i {
+            color: var(--sustain-tan);
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
+
+        .sustain-image-caption strong {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .sustain-image-caption span {
+            display: block;
+            font-size: 12px;
+            color: #C8D0D8;
+            line-height: 1.6;
+        }
+
+        /* ================= PRINCIPLES ================= */
+
+        .sustain-principles {
+            background: #F3EEE7;
+        }
+
+        .sustain-principle-card {
+            height: 100%;
+            background: #fff;
+            padding: 32px 28px;
+            border-radius: 15px;
+            border: 1px solid #EAE1D7;
+            transition: .35s ease;
+        }
+
+        .sustain-principle-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 40px rgba(107,45,27,.10);
+            border-color: rgba(200,130,66,.5);
+        }
+
+        .sustain-icon {
+            width: 65px;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            background: rgba(200,130,66,.13);
+            color: var(--sustain-brown);
+            font-size: 25px;
+            margin-bottom: 22px;
+            transition: .3s ease;
+        }
+
+        .sustain-principle-card:hover .sustain-icon {
+            background: var(--sustain-brown);
+            color: #fff;
+            transform: rotate(-5deg);
+        }
+
+        .sustain-principle-card h3 {
+            color: var(--sustain-navy);
+            font-size: 21px;
+            font-weight: 700;
+            margin-bottom: 13px;
+        }
+
+        .sustain-principle-card p {
+            color: var(--sustain-muted);
+            font-size: 14px;
+            line-height: 1.85;
+            margin: 0;
+        }
+
+        /* ================= RESPONSIBLE APPROACH ================= */
+
+        .sustain-approach {
+            background: #fff;
+        }
+
+        .sustain-approach-box {
+            background: var(--sustain-navy);
+            color: #fff;
+            border-radius: 20px;
+            padding: 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sustain-approach-box::before {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 50%;
+            right: -100px;
+            top: -160px;
+        }
+
+        .sustain-approach-box h2 {
+            color: #fff;
+            font-size: 35px;
+            margin-bottom: 18px;
+            position: relative;
+        }
+
+        .sustain-approach-box p {
+            color: #C6CED7;
+            line-height: 1.9;
+            max-width: 800px;
+            position: relative;
+        }
+
+        .sustain-approach-points {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin-top: 30px;
+            position: relative;
+        }
+
+        .sustain-approach-point {
+            display: flex;
+            align-items: flex-start;
+            gap: 13px;
+            color: #F3EDE5;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .sustain-approach-point i {
+            color: #D9A36B;
+            font-size: 18px;
+            margin-top: 3px;
+        }
+
+        /* ================= PROCESS ================= */
+
+        .sustain-process {
+            background: #F5F1EB;
+        }
+
+        .sustain-process-card {
+            text-align: center;
+            padding: 30px 20px;
+            height: 100%;
+        }
+
+        .sustain-process-number {
+            width: 65px;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: var(--sustain-brown);
+            color: #fff;
+            font-size: 21px;
+            font-weight: 800;
+            box-shadow: 0 8px 20px rgba(107,45,27,.2);
+        }
+
+        .sustain-process-card h3 {
+            color: var(--sustain-navy);
+            font-size: 20px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .sustain-process-card p {
+            color: var(--sustain-muted);
+            font-size: 14px;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* ================= CTA ================= */
+
+        .sustain-cta {
+            padding: 75px 0;
+            background:
+                linear-gradient(110deg, rgba(107,45,27,.96), rgba(15,27,41,.96)),
+                url('Images/Pio-Laser-10.jpeg') center/cover;
+            color: #fff;
+        }
+
+        .sustain-cta h2 {
+            font-size: clamp(28px, 4vw, 39px);
+            margin-bottom: 15px;
+        }
+
+        .sustain-cta p {
+            color: rgba(255,255,255,.78);
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .sustain-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 24px;
+            background: var(--sustain-tan);
+            color: #fff;
+            border-radius: 8px;
+            font-weight: 700;
+            white-space: nowrap;
+            transition: .3s ease;
+        }
+
+        .sustain-cta-btn:hover {
+            background: #fff;
+            color: var(--sustain-brown);
+            transform: translateY(-3px);
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 991px) {
+            .sustain-section {
+                padding: 65px 0;
+            }
+
+            .sustain-image-caption {
+                left: 15px;
+            }
+
+            .sustain-approach-box {
+                padding: 35px 25px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .sustain-hero {
+                min-height: auto;
+            }
+
+            .sustain-hero-content {
+                padding: 85px 15px;
+            }
+
+            .sustain-hero p {
+                font-size: 15px;
+            }
+
+            .sustain-intro-image {
+                height: 320px;
+            }
+
+            .sustain-intro-visual {
+                min-height: 370px;
+            }
+
+            .sustain-image-caption {
+                bottom: 10px;
+                max-width: 210px;
+            }
+
+            .sustain-approach-points {
+                grid-template-columns: 1fr;
+            }
+
+            .sustain-approach-box h2 {
+                font-size: 28px;
+            }
+
+            .sustain-cta .sustain-cta-btn {
+                margin-top: 25px;
+            }
+        }
